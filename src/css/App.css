@@ -1,0 +1,261 @@
+/*-----------  Conteúdo único --------- */
+
+/* -----------------------Header --------------------*/
+
+.Header {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 8%;
+}
+
+
+header a {
+  color: white;
+}
+
+.link-home {
+  width: 20%
+}
+
+header .Logo {
+  width: 80%;
+  margin-top: 2%;
+}
+
+.header-right {
+  width: 80%;
+}
+
+.header-top {
+
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+
+}
+
+.search-box {
+  margin: 5% 0;
+  background-color: #fff;
+  height: 50px;
+  padding: 10px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+
+}
+
+.search-text {
+  padding: 0;
+  background: none;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  width: 80%;
+}
+
+.search-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.div-login {
+  padding: 0 7%;
+  padding-left: 20%;
+}
+
+.div-login img {
+  margin-top: 5%;
+  float: left;
+}
+
+.div-login p {
+  color: white;
+  float: left;
+  margin-left: 10px;
+
+}
+
+
+.Menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  font-weight: 800;
+  flex-wrap: wrap;
+}
+
+/*---------------------------Footer ---------------------------*/
+
+footer {
+  background-color: black;
+  color: white;
+  padding-top: 3%;
+
+}
+
+.link-home-footer {
+
+  width: 25%;
+}
+
+.link-home-footer img {
+  width: 100%;
+}
+
+footer a {
+  color: white;
+}
+.pgimage{
+  width: 80%;
+}
+
+.appimages{
+  margin: 10% 0;
+  width: 30%
+}
+
+.Footersuperior {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8%;
+  padding-bottom: 3%;
+  flex-wrap: wrap;
+}
+
+.Footersuperior h4 {
+  margin-left: 20px;
+}
+
+.Footersuperior ul li {
+  list-style: none;
+  margin: 2px;
+  letter-spacing: 1px;
+  margin-left: -40px;
+}
+
+.footer-top-center{
+  width: 20%;
+}
+.footer-top-center h4{
+  margin: 0;
+}
+
+.Footerinferior {
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 0.01%;
+}
+
+/*----------------------------- Página Home --------------*/
+
+
+.txtmainhome {
+  color: black;
+  text-align: center;
+}
+
+.imgBannerHome {
+  width: 100%;
+}
+
+.txtmainhome {
+  color: black;
+  text-align: center;
+  margin: 2% 0;
+}
+
+.SpaceCard {
+  padding: 1.5% 8% 4% 8%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.card {
+  width: 200px;
+  height: 250px;
+  background-color: pink;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+
+/*--------------- Media --------------*/
+
+@media (max-width: 730px) {
+  .Header {
+    flex-direction: column;
+    padding: 3%;
+
+  }
+
+  .search-box {
+    width: 100%;
+
+  }
+
+  .header-top {
+
+    padding-left: 0;
+
+  }
+
+  .div-login {
+    padding-left: 0;
+  }
+
+  .link-home {
+    width: 80%;
+    align-self: center;
+  }
+
+  .header-right {
+    align-self: center;
+  }
+
+  .Footersuperior {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .link-home-footer {
+    min-width: 250px;
+    align-self: center;
+  }
+  .footer-top-center{
+    width: 100%;
+  }
+
+
+}
+
+@media (max-width: 620px) {
+
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 280px) {
+  .link-home-footer {
+    min-width: 150px;
+  }
+}
