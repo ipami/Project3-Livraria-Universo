@@ -12,20 +12,9 @@ import Logo from './images/logo.png'
 
 
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+import Forgot from './pages/Forgot';
 
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Home/>
-//   }, 
-//   {
-//     path: 'contact',
-//     element: <Contact/>
-//   }, 
-// ])
-const navDefault = ['Quem somos', 'Nossos Produtos', 'Carrinho', 'Login']
-const navLogin = ['Sair']
 
 const router = createBrowserRouter([
   {
@@ -35,39 +24,43 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: [<Header model="default" logo={Logo}/>,<Home chamada={"Isso aqui é um teste!"} imgbanner={ImgBanner} logo={Logo} />]
+        element: [<Header model="default" logo={Logo}/>,<Home chamada={"Confira nossas novidades literárias!"} imgbanner={ImgBanner} logo={Logo} />]
       },
       {
         path: 'about',
-        element: <Home />
+        element: [<Header model="default" logo={Logo}/>]
       },
       {
         path: 'products',
-        element: <Home />
+        element: <Header model="default" logo={Logo}/>
       },
       {
         path: '/product/:id',
-        element: <Home />
+        element: <Header model="default" logo={Logo}/>
       },
       {
         path: 'cart',
-        element: <Contact />
+        element: <Header model="default" logo={Logo}/>
       },
       {
         path: 'checkout',
-        element: <Contact />
+        element: <Header model="default" logo={Logo}/>
       },
       {
         path: 'login',
-        element: <Contact />
+        element: [<Header model="default" logo={Logo}/>, <Login />]
+      },
+      {
+        path: 'login/forgot',
+        element: [<Header model="default" logo={Logo}/>, <Forgot />]
       },
       {
         path: 'user',
-        element: <Contact />
+        element: <Header model="login" logo={Logo}/>
       },
       {
         path: 'admin',
-        element: <Contact />,
+        element: <Header model="login" logo={Logo}/>,
         children: [
           {
             path: 'sales',

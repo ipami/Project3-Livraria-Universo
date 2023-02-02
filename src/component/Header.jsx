@@ -14,7 +14,7 @@ function Header(props) {
             <div className="header-right">
                 <div className="header-top">
                     <div className="search-box">
-                        <input type="text" class="search-text" placeholder="Pesquisar.." />
+                        <input type="text" className="search-text" placeholder="Pesquisar.." />
                         <a className="search-btn">
                             <img className="loupe-blue" src={LoupeBlue} width="25px" height="25px" />
                         </a>

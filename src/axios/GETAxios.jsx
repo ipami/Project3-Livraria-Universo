@@ -1,28 +1,26 @@
 import axios from "axios";
+import { createElement } from "react";
 
 
-function GetAxios(props) {
+function GetAxios(typeget, local) {
 
-    const url = `https://pj3-estao-servidos.onrender.com/${props.typeget}`
+    const url = `https://pj3-estao-servidos.onrender.com/${typeget}`
+    console.log(url)
 
+    const titlec1 = document.querySelector('#titlec1')
+    const pc1 = document.querySelector('#pc1')
+    const pricec1 = document.querySelector('#pricec1')
+    
     axios
         .get(url)
         .then((response) => {
-            console.log(response.data)
-            console.log(response.data.length)
-            for( let i = 0; i < response.data.length; i++){
-                console.log(response.data[i])
-            }
-        }
+            console.log(response.data)})
+          
+
+        .catch ((error) => { console.error(error) })
+
+    }
 
 
-        )
-        .catch((error) => { console.error(error) });
-
-    return (<div>
-        <h1>Get Axios</h1>
-    </div>
-    )
-}
 
 export default GetAxios;
