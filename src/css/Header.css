@@ -1,0 +1,142 @@
+/* -----------------------Header --------------------*/
+
+.Header {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 8%;
+  padding-bottom: 1%;
+}
+
+
+header a {
+  color: white;
+}
+
+.link-home {
+  width: 18%;
+  margin: 2% 0;
+}
+
+header .Logo {
+  width: 60%;
+  margin-top: 1%;
+}
+
+.header-right {
+  width: 80%;
+}
+
+.header-top {
+
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+
+}
+
+.search-box {
+  margin: 5% 0;
+  background-color: #fff;
+  height: 50px;
+  padding: 10px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+
+}
+
+.search-text {
+  padding: 0;
+  background: none;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  width: 80%;
+}
+
+.search-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.div-login {
+  padding: 0 7%;
+  padding-left: 20%;
+}
+
+.div-login img {
+  margin-top: 5%;
+  float: left;
+}
+
+.div-login p {
+  color: white;
+  float: left;
+  margin-left: 10px;
+
+}
+
+
+.Menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  font-weight: 800;
+  flex-wrap: wrap;
+}
+
+
+@media (max-width: 730px) {
+  .Header {
+    flex-direction: column;
+    padding: 3%;
+
+  }
+
+  .search-box {
+    width: 100%;
+
+  }
+
+  .header-top {
+
+    padding-left: 0;
+
+  }
+
+  .div-login {
+    padding-left: 0;
+  }
+
+  .link-home {
+    width: 80%;
+    align-self: center;
+  }
+
+  .header-right {
+    align-self: center;
+  }
+
+
+
+
+}
+
+@media (max-width: 620px) {
+
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+  }
+}

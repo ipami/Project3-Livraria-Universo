@@ -1,0 +1,144 @@
+/* ------------------------------------- LOGIN --------------------------------- */
+
+/* Corpo da página */
+
+.bglogin {
+  background-color: #4953a0;
+}
+
+.logincontainer {
+  background-image: url(../images/5074163.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: auto;
+  padding: 10% 0;
+}
+
+.msgsucess {
+  margin: 10%;
+  display: none;
+}
+
+.inputfield {
+  border: 2px solid black;
+}
+
+.inputfield:focus {
+  border: 2px solid #4235cdda;
+  background-color: black;
+  color: #4235cdda;
+}
+
+.inputfield:focus::placeholder {
+  color: #654bf9;
+}
+
+
+
+.remember {
+  color: white;
+}
+
+#forgot {
+  color: white;
+  text-decoration: underline;
+
+}
+
+
+#intro {
+  height: 100vh;
+}
+
+#btnsend {
+  background-color: black;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 2px;
+  width: 94%;
+  margin-left: 3.5%;
+  margin-top: 2%;
+}
+
+
+#whiteline {
+  color: white;
+  opacity: 1;
+  margin: -10% 7% 3% 7%;
+
+}
+
+.options {
+  width: 100%;
+  padding-bottom: 10%;
+
+
+}
+
+.group {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #4953a0, #63c0b9, #28d9aa);
+  border-image-slice: 1;
+  width: 86%;
+  height: 45px;
+  cursor: pointer;
+}
+
+.ac-logo {
+  width: 35px;
+  height: 35px;
+  margin: 0 5%;
+}
+
+.txt-op {
+  margin-top: 3.8%;
+  color: white;
+  font-weight: 700;
+}
+
+.span-email, .span-pass, .span-passconfirm, .span-cep {
+  font-size: 13px;
+  margin: 3px 0 0 1px;
+  color: red;
+  display: none;
+
+}
+
+.btn-login {
+  opacity: 0.7;
+  margin-right: 1rem;
+  background-color: #4f146b;
+  padding: 10px 20px;
+  width: 50%;
+  font-size: 1rem;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  border: 0;
+}
+
+.btn-login:hover {
+  background-color: #4f146b;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+
+/* ------------------------------------- Recuperação de senha --------------------------------- */
+
+.return {
+  display: none;
+}
+
+
+
+
+@media (max-width: 730px) {
+
+  .div-login {
+    padding-left: 0;
+  }
+
+}

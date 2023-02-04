@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/App.css';
+import '../css/Footer.css';
 import { Link } from "react-router-dom";
 import PGImage from "../images/pgimages.png"
 import AppImage from "../images/app.png"

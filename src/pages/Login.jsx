@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import '../css/Login.css'
 
 function Login() {
     return (
@@ -42,33 +43,12 @@ function Login() {
                                            <Link to ='/login/forgot'> <p id="forgot">Esqueceu sua senha?</p></Link>
                                         </div>
 
-                                        <button type="submit" className="btn btn-primary btnsend recovery"
+                                        <button type="submit" className="btn btn-primary btn-login recovery"
                                             id="btnsend">ENVIAR</button>
                                     </div>
                                 </div>
                             </form>
 
-                            {/* <hr id="whiteline" className="hddline"/>
-
-                        <div className="hddop">
-
-                            <div className="d-flex flex-column mb-3 options justify-content-center ">
-                                <div className="d-flex flex-row mb-3 align-self-center  group">
-                                    <img src="../images/googlelogo.png" className="ac-logo align-self-center"/>
-                                    <p className="txt-op align-self-center">Entre com Google</p>
-                                </div>
-                                <div className="d-flex flex-row mb-3 align-self-center group">
-                                    <img src="../images/fclogo.png" className="ac-logo align-self-center"/>
-                                    <p className="txt-op align-self-center">Entre com Facebook</p>
-                                </div>
-                                <div className="d-flex flex-row align-self-center group">
-                                    <img src="../images/inlogo.png" className="ac-logo align-self-center"/>
-                                    <p className="txt-op align-self-center">Entre com Linkedin</p>
-
-                                </div>
-
-                            </div> */}
-                        {/* </div> */}
                     </div>
                 </div>
             </div>

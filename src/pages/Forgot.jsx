@@ -1,3 +1,5 @@
+import '../css/Login.css'
+
 function Forgot (){
 return(
     <main className="logincontainer">
@@ -23,7 +25,7 @@ return(
                         <div className="row mb-4">
 
 
-                            <button type="submit" className="btn btn-primary btnsend recovery" id="btnsend">ENVIAR</button>
+                            <button type="submit" className="btn btn-primary btn-login recovery" id="btnsend">ENVIAR</button>
                             <a href="login.html"><button type="button" className="btn btn-primary btnsend return" id="btnsend">VOLTAR</button></a>
                         </div>
                     </form>

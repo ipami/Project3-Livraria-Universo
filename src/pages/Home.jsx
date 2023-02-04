@@ -1,74 +1,89 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import React from "react";
-import '../css/App.css';
+import '../css/Home.css';
 
 
 
 
 function Home(props) {
 
+    const [books, setBooks] = useState([])
+
+    const getBooks = async () => {
+
+        try {
+            const response = await axios.get('https://pj3-estao-servidos.onrender.com/book')
+
+            const data = response.data;
+
+            console.log(data);
+
+            setBooks(data);
+
+        } catch (error) {
+            console.log(error)
+
+        }
+
+
+    }
+
+    useEffect(() => {
+
+        getBooks()
+    }, [])
+
+    const toCorrect = (price) => {
+        return price.replace(".", ",")
+    }
+
+    const showParc = (price) => {
+
+        if (typeof price == 'number') {
+            const bookPrice = price / 10
+            const bookParc = bookPrice.toFixed(2)
+
+            return bookParc.replace(".", ",")
+        }
+        else {
+            const num = Number(price)
+            const bookParc = (num / 10).toFixed(2)
+            return bookParc.replace(".", ",")
+        }
+    }
 
 
 
     return (
-        <div>
 
+        <div className="home-main">
             <img src={props.imgbanner} className="imgBannerHome"></img>
             <div>
                 <h1 className="txtmainhome">{props.chamada}</h1>
                 <div className="SpaceCard">
 
-                    <div className="card">
-                        <div className="card-body">
-                            <h3>Torto arado</h3>
-                        </div>
-                        <div className="card-body">
-                            <img className="imghome" src="https://lojasaraivanew.vtexassets.com/arquivos/ids/198603-1200-auto?v=638071357137270000&width=1200&height=auto&aspect=true" />
-                        </div>
-                        <div className="card-body">
-                        <h2>R$ 49,90</h2>
-                        </div>
-                        <button class="btn btn-success">Comprar</button>
-                    </div>
 
-                    <div className="card">
-                        <div className="card-body">
-                            <h3>A hipótese do amor</h3>
-                        </div>
-                        <div className="card-body">
-                            <img className="imghome" src="https://lojasaraivanew.vtexassets.com/arquivos/ids/198348-1200-auto?v=638067920617830000&width=1200&height=auto&aspect=true" />
-                        </div>
-                        <div className="card-body">
-                        <h2>R$ 42,31</h2>
-                        </div>
-                        <button class="btn btn-success">Comprar</button>
-                    </div>
+                    <div className="products-home">
+                        {books.length === 0 ? (<div className="loader"></div>) : (
+                            books.slice(0, 4).map((book) => (
+                                <div className="product-home" key={book.id}>
+                                    <img className="product-image-home" src={book.image} />
+                                    <h4 className="product-name-home">{book.name}</h4>
+                                    <span className="product-price-home">R$ {toCorrect(book.price)}</span>
+                                    <span className="product-parc-home">ou em até 10x de R$ {showParc(book.price)}</span>
+                                    <div className="buttons-home">
+                                        <Link to={`/products/${book.id}`} className="btn-home">Ler mais</Link>
+                                        {/* <Link className="btn">Comprar</Link>  */}
 
-                    <div className="card">
-                        <div className="card-body">
-                            <h3>Verity</h3>
-                        </div>
-                        <div className="card-body">
-                            <img className="imghome" src="https://lojasaraivanew.vtexassets.com/arquivos/ids/198351-1200-auto?v=638067932803730000&width=1200&height=auto&aspect=true" />
-                        </div>
-                        <div className="card-body">
-                        <h2>R$ 39,90</h2>
-                        </div>
-                        <button class="btn btn-success">Comprar</button>
-                    </div>
 
-                    <div className="card">
-                        <div className="card-body">
-                            <h3>A garota do lago</h3>
-                        </div>
-                        <div className="card-body">
-                            <img className="imghome" src="https://lojasaraivanew.vtexassets.com/arquivos/ids/198589-1200-auto?v=638070822054100000&width=1200&height=auto&aspect=true" />
-                        </div>
-                        <div className="card-body">
-                            <h2>R$ 9,90</h2>
-                        </div>
-                        <button class="btn btn-success">Comprar</button>
+                                        {/* onClick={() => addProductToCart(book)} */}
+                                    </div>
+                                </div>
+                            ))
+                        )}
                     </div>
-
 
                 </div>
             </div >
