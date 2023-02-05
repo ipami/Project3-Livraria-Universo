@@ -1,10 +1,10 @@
 .book-detail {
   color: black;
-  margin-top: -120px;
+  min-height: 700px;
 }
 
 .book-info-detail {
-  margin: 5% 8%;
+  margin: 0% 8% 5% 8%;
   padding: 5% 5%;
   width: 84%;
   display: flex;
@@ -66,3 +66,47 @@
   height: 44px;
   padding-left: 10px;
 }
+
+
+.loader-product{
+	position: relative;
+  margin-left: 45%;
+  margin-top: 10%;
+	width:150px;
+	height: 150px;
+	border-radius: 50%;
+	background:linear-gradient(45deg, transparent, transparent 40%, green);
+	animation: animar 2s linear infinite;
+
+}
+
+@keyframes animar {
+	0%{
+		transform: rotate(0deg);
+		filter: hue-rotate(0);
+	}
+	100%{
+		transform: rotate(360deg);
+		filter: hue-rotate(360deg);
+	}
+}
+
+.loader-product::before{
+content: '';
+position: absolute;
+inset: 6px;
+border-radius: 50%;
+background-color: white;
+z-index: 2;
+}
+
+
+.loader-product::after{
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	background-color: #040305;
+	background:linear-gradient(45deg, transparent, transparent 40%, green);
+	filter: blur(30px);
+	}

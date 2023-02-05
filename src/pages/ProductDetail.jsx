@@ -29,7 +29,7 @@ const Book = () => {
   return (
     <div className="book-detail">
       {!book.name ? (
-        <div className="loader"></div>
+        <div className="loader-product"></div>
       ) : (
         <div className="book-info-detail">
           <div >

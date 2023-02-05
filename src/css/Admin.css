@@ -1,98 +1,87 @@
-.admin-title {
+.container-admin {
+    min-height: 700px;
     text-align: center;
-    margin-bottom: 2rem;
-    align-self: center;
+    padding: 5% 8%;
     text-transform: uppercase;
+    background-image: url('../images/bgadmin.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.menu-admin{
+    background-color: white;
+    padding: 2%;
+    border-radius: 25px;
+    max-width: 600px;
+}
+.container-admin h1 {
     font-size: 30px;
-    margin-top: 2rem;
     font-weight: 600;
-    
+}
 
+.container-admin h3 {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 1% 0;
+}
 
-  
-  }
-  
-  .admin-books{
+.admin-nav {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     flex-wrap: wrap;
-    padding: 2% 8% ;
-  }
+    justify-content: space-around;
+}
 
-  .bookbox-admin{
+.emp-field, .book-field, .client-field {
+    padding: 2% 4%;
+}
+
+
+.emp-field h3, .book-field h3, .client-field h3 {
+    font-size: 20px;
+}
+
+.buttons-admin-menu {
+    max-width: 300px;
+    height: 120px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    height: 430px;
-    width: 320px;
-    padding: 10px;
-    border: 4px solid black;
-    border-radius: 20px;
-    background-color: black;
-    position: relative;
-    /* overflow: hidden; */
-    align-self: center;
-    color:white;
-    margin-bottom: 2rem;
-    cursor:default;
-    }
+    align-items: center;
+    align-content: center;
+}
 
 
-
-  .book-image-admin {
-    display: block;
-    width: 100%;
-    height: 50%;
-    object-fit: contain;
-    background-color: black;
-    margin-bottom: 10px;
-  }
-
-  .book-name-admin {
-    margin-top: calc(8px, 5vw, 15px);
-    text-align: center;
+.btn-admin-home {
     text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 20px;
-    margin: 7% 0;
-  }
-  
-  .actions {
-    display: flex;
-    gap: 1rem;
-  justify-content: center;
-  }
-  
-  .btn{
+    font-weight: 800;
     opacity: 0.7;
-  }
-  
-  .edit-btn {
-    background-color: #13c9e9;
-    color: #fff;
-    margin-left:0;
-  
-  }
-  .edit-btn:hover{
-    background-color: #13c9e9;
-    color:white;
-    opacity: 1;
+    background-color: #146b38;
+    padding: 10px 20px;
+    width: 260px;
+    font-size: 1rem;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+    border: 0;
+    margin-bottom: 8%;
     transition: opacity 0.5s;
 
-  }
-  
-  .delete-btn {
-    background-color: #eb1717;
-    color: #fff;
-    display: block;
-    margin-left:0;
-  }
-  
-  .delete-btn:hover{
-    background-color: #eb1717;
-    color: #fff;
+}
+
+
+.btn-admin-home:hover {
+    background-color: #146b38;
+    color: white;
     opacity: 1;
-    transition: opacity 0.5s;
-  }
+
+}
+
+.btn-admin-file{
+    background-color: #13c9e9;
+}
+
+.btn-admin-file:hover {
+    background-color: #13c9e9;
+;
+
+}

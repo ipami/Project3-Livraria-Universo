@@ -1,8 +1,7 @@
 import blogFetch from "../axios/config";
-
 import { useState, useEffect } from "react";
 
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 import '../css/UpdateBook.css'
 
@@ -52,7 +51,7 @@ const UpdateBook = () => {
       image: image,
     });
 
-    navigate("/");
+    navigate("/admin");
   };
 
   useEffect(() => {
@@ -88,6 +87,7 @@ const UpdateBook = () => {
             <textarea name="description" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)} value={description || ""}></textarea>
           </div>
           <input type="submit" value="Editar Post" className="btn-update" />
+          <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>
         </form>
       </div>
     </div>

@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-import "../css/Admin.css";
+import "../css/AdminBook.css";
 import axios from "axios";
 
-const Admin = () => {
+const AdminBook = () => {
   const [books, setBooks] = useState([]);
 
   const getBooks = async () => {
@@ -35,35 +35,36 @@ const Admin = () => {
   }, []);
   return (
 
-    <div className="admin">
-            <h1 className="admin-title">Gerenciar Livros</h1>
+    <div className="admin-file">
+      <h1 className="admin-title">Gerenciar Livros</h1>
       <div className="admin-books">
 
-      {books.length === 0 ? (
-        <p><div className="loader"></div></p>
-      ) : (
-        books.map((book) => (
-          <div className="bookbox-admin" key={book.id}>
-            <div className="bookaction-admin" key={book.id}>
-              <img className="book-image-admin" src={book.image} />
-              <h2 className="book-name-admin">{book.name}</h2>
-              {/* <p>{book.description}	</p> */}
-              <div className="actions">
-                <Link className="btn edit-btn" to={`/admin/editbook/${book.id}`}>
-                  Editar
-                </Link>
-                <button className="btn delete-btn" onClick={() => deleteBook(book.id)}>
-                  Excluir
-                </button>
+        {books.length === 0 ? (
+          <div className="loader"></div>
+        ) : (
+          books.map((book) => (
+            <div className="bookbox-admin" key={book.id}>
+              <div className="bookaction-admin" key={book.id}>
+                <img className="book-image-admin" src={book.image} />
+                <h2 className="book-name-admin">{book.name}</h2>
+                {/* <p>{book.description}	</p> */}
+                <div className="actions">
+                  <Link className="btn edit-btn" to={`/admin/updatebook/${book.id}`}>
+                    Editar
+                  </Link>
+                  <button className="btn delete-btn" onClick={() => deleteBook(book.id)}>
+                    Excluir
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )))}
-    </div>
+          )))}
+      </div>
+      <Link to="/admin"><input type="button" value="Voltar" className="btn-back-book" /></Link>
     </div>
   )
 
 
 };
 
-export default Admin;
+export default AdminBook;

@@ -85,7 +85,7 @@
 	border-radius: 3px;
 	text-align: center;
 	color: white;
-    border: none;
+    border: 0;
     margin-left: 18%;
     
 
@@ -97,3 +97,28 @@
 	opacity: 1;
 	transition: opacity 0.5s;
 }
+
+.btn-back {
+	opacity: 0.7;
+	background-color: #4f146b;
+	padding: 10px 20px;
+	width: 70%;
+    margin-left: 100px;
+	font-size: 1rem;
+	border-radius: 3px;
+	text-align: center;
+	color: white;
+    border: 0;
+    margin-left: 18%;
+    transition: opacity 0.5s;
+    
+
+}
+
+.btn-back:hover {
+	background-color: #4f146b;
+	color: white;
+	opacity: 1;
+	
+}
+

@@ -1,5 +1,5 @@
 import blogFetch from "../axios/config";
-
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ const NewBook = () => {
             image: image,
         });
 
-        navigate("/");
+        navigate("/admin");
     };
 
     return (<main className="main-newbook">
@@ -68,6 +68,7 @@ const NewBook = () => {
                     <textarea name="description"className="textarea-newbook" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)}></textarea>
                 </div>
                 <input type="submit" value="Cadastrar Livro" className="btn-newbook" />
+                <Link to="/admin"><button className="btn-newbook back-to-adminpage" >Voltar</button></Link>
             </form>
         </div>
     </main>

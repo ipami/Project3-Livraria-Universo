@@ -59,13 +59,14 @@ header .Logo {
 }
 
 .search-btn {
+  background-color: white;
+  border: 0;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 
@@ -96,6 +97,48 @@ header .Logo {
   flex-wrap: wrap;
 }
 
+.Menu li:hover{
+  color: #1eb65d;
+}
+
+
+.header-admin {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 8%;
+  padding-bottom: 1%;
+}
+
+
+.link-home-admin {
+  width: 15%;
+  margin: 2% 0;
+}
+
+.logo-admin {
+  width: 60%;
+  margin-top: 1%;
+}
+
+
+.title-header {
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.logout {
+  font-size: 20px;
+  color: white;
+  font-weight: 800;
+}
+
+.logout:hover{
+  color: #eb1717;
+}
 
 @media (max-width: 730px) {
   .Header {
