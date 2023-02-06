@@ -14,15 +14,31 @@ function Header(props) {
 
     const model = props.model
 
+
+    const [search, setSearch] = useState("")
+
+
+
+
+
+
+
+
+
+
 return (<>{model == 'default'?(
     <header className="Header">
         <Link to="/" className="link-home"><img src={props.logo} className="Logo" /></Link>
         <div className="header-right">
             <div className="header-top">
-                <form className="search-box" >
-                    <input type="text" className="search-text" name="name" id="name" placeholder="Pesquisar.."
+                <form className="search-box" action="/search" onSubmit={(e) => {
+                    let valor = document.getElementById('namesearch').value
+                    sessionStorage.setItem('namesearch', valor)
+
+                    }}>
+                    <input type="text" className="search-text" name="name" id="namesearch" placeholder="Pesquisar.."
                         onChange={(e) => { setSearch(e.target.value) }} />
-                    <button type="submit" className="search-btn" >
+                    <button type="submit" className="search-btn"  >
                         <img className="loupe-blue" src={LoupeBlue} width="25px" height="25px" />
                     </button>
 

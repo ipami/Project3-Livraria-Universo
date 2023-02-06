@@ -13,15 +13,27 @@
 	overflow: hidden;
 }
 
-main {
+.mainproducts {
 	padding: 3% 8%;
 	background-color: white;
-
+	min-height: 400px;
 
 }
 
+
+
 .title {
 	margin-bottom: 3rem;
+	text-align: center;
+	color: black;
+	text-transform: uppercase;
+	font-size: calc(15px, 5vw, 30px);
+	font-weight: bolder;
+}
+
+
+.titlesearch{
+	margin: 3rem 0;
 	text-align: center;
 	color: black;
 	text-transform: uppercase;

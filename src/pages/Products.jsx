@@ -5,6 +5,7 @@ import '../css/Products.css'
 
 
 const Products = () => {
+ 
 
   const [books, setBooks] = useState([])
 
@@ -15,9 +16,12 @@ const Products = () => {
 
       const data = response.data;
 
+
       console.log(data);
 
+
       setBooks(data);
+
 
     } catch (error) {
       console.log(error)
@@ -51,7 +55,7 @@ const Products = () => {
     }
   }
 
-  return (<main>
+  return (<main className="mainproducts">
 
     <h1 className="title">Nossos Livros</h1>
 
