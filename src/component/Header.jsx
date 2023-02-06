@@ -57,7 +57,7 @@ return (<>{model == 'default'?(
             </div>
         </div>
     </header >):( <header className="header-admin">
-        <Link to="/" className="link-home-admin"><img src={props.logo} className="logo-admin" /></Link>
+        <Link to="/admin" className="link-home-admin"><img src={props.logo} className="logo-admin" /></Link>
         <h1 className="title-header">AMBIENTE DE GERENCIAMENTO</h1>
 
         <Link to="/" ><h4 className="logout">SAIR</h4></Link>
