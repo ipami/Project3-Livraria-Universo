@@ -97,7 +97,7 @@ header .Logo {
   flex-wrap: wrap;
 }
 
-.Menu li:hover{
+.Menu li:hover {
   color: #1eb65d;
 }
 
@@ -136,7 +136,7 @@ header .Logo {
   font-weight: 800;
 }
 
-.logout:hover{
+.logout:hover {
   color: #eb1717;
 }
 

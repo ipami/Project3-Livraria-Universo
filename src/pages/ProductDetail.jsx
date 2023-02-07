@@ -42,8 +42,8 @@ const Book = () => {
 
             <p className="description-detail">{book.description}</p>
             {/* onClick={() => addProductToCart(book)}> */}
-                 <input type="number" className="qtn-book-detail" id="qtn-book-detail"/>
-                 <button className="btn-detail"	>	Adicionar ao carrinho</button>
+            <input type="number" className="qtn-book-detail" id="qtn-book-detail" />
+            <button className="btn-detail"	>	Adicionar ao carrinho</button>
           </div>
         </div>
       )}

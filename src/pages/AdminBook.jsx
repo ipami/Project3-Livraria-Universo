@@ -13,7 +13,6 @@ const AdminBook = () => {
   const getBooks = async () => {
     try {
       const response = await blogFetch.get("/book");
-
       const data = response.data;
 
       setBooks(data);

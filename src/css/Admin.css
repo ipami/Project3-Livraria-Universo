@@ -9,12 +9,13 @@
 
 }
 
-.menu-admin{
+.menu-admin {
     background-color: white;
     padding: 2%;
     border-radius: 25px;
     max-width: 600px;
 }
+
 .container-admin h1 {
     font-size: 30px;
     font-weight: 600;
@@ -76,12 +77,12 @@
 
 }
 
-.btn-admin-file{
+.btn-admin-file {
     background-color: #13c9e9;
 }
 
 .btn-admin-file:hover {
     background-color: #13c9e9;
-;
+    ;
 
 }

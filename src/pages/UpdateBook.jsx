@@ -23,8 +23,6 @@ const UpdateBook = () => {
 
       const data = response.data;
 
-      console.log(data);
-
       setTitle(data.name);
       setPublishing(data.publishing);
       setAuthor(data.author);
@@ -36,10 +34,10 @@ const UpdateBook = () => {
     }
   };
 
-  const editPost = async (e) => {
+  const UpBook = async (e) => {
     e.preventDefault();
 
-    const post = { title, publishing, author, description, price, image };
+
 
     await blogFetch.put(`/book/${id}`, {
       id: id,
@@ -64,7 +62,7 @@ const UpdateBook = () => {
     <div className="info-edit-book-update">
       <img src={image} className="book-image-update" />
       <div className="edit-book-update">
-        <form className="form-update" onSubmit={(e) => editPost(e)}>
+        <form className="form-update" onSubmit={(e) => UpBook(e)}>
           <div className="form-control form-update">
             <label >Título:</label>
             <input classname="update" type="text" name="title" id="title" placeholder="Digite o título" onChange={(e) => setTitle(e.target.value)} value={title || ""} />

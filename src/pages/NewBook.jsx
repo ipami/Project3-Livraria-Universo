@@ -21,7 +21,6 @@ const NewBook = () => {
     const createBook = async (e) => {
         e.preventDefault();
 
-        const book = { title, publishing, author, description, price, image };
 
         await blogFetch.post("/book", {
             id: '',
@@ -44,28 +43,28 @@ const NewBook = () => {
                 <div className="form-control form-newbook">
                     <label >Título:</label>
                     <input type="text" name="title" id="title" placeholder="Digite o título"
-                        onChange={(e) => setTitle(e.target.value)} className ="input-newbook"
+                        onChange={(e) => setTitle(e.target.value)} className="input-newbook"
                     />
                     <label >Editora:</label>
                     <input type="text" name="publishing" id="publishing" placeholder="Digite a editora"
-                        onChange={(e) => setPublishing(e.target.value)} className ="input-newbook"
+                        onChange={(e) => setPublishing(e.target.value)} className="input-newbook"
                     />
                     <label >Author:</label>
                     <input type="text" name="author" id="author" placeholder="Digite o autor"
-                        onChange={(e) => setAuthor(e.target.value)} className ="input-newbook"
+                        onChange={(e) => setAuthor(e.target.value)} className="input-newbook"
                     />
                     <label >Preço:(ex.: 45.99)</label>
                     <input type="number" name="price" id="price" min="0" max="100000" step=".01" placeholder="Digite o valor"
-                        onChange={(e) => setPrice(e.target.value)} className ="input-newbook"
+                        onChange={(e) => setPrice(e.target.value)} className="input-newbook"
                     />
                     <label >Endereço da imagem:</label>
                     <input type="text" name="image" id="image" placeholder="Digite o endereço da imagem"
-                        onChange={(e) => setImage(e.target.value)} className ="input-newbook"
+                        onChange={(e) => setImage(e.target.value)} className="input-newbook"
                     />
                 </div>
                 <div className="form-control form-newbook">
                     <label htmlFor="description">Descrição:</label>
-                    <textarea name="description"className="textarea-newbook" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)}></textarea>
+                    <textarea name="description" className="textarea-newbook" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)}></textarea>
                 </div>
                 <input type="submit" value="Cadastrar Livro" className="btn-newbook" />
                 <Link to="/admin"><button className="btn-newbook back-to-adminpage" >Voltar</button></Link>

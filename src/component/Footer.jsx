@@ -22,14 +22,14 @@ function Footer(props) {
                     <h4> Horário de atendimento</h4>
                     <p>Seg a sáb das 09h às 20h</p>
                     <h4> Contato</h4>
-                    <p>Telefone: (21) 2018-5869<br/>
-                        Celular: (21) 99125-1180<br/>
+                    <p>Telefone: (21) 2018-5869<br />
+                        Celular: (21) 99125-1180<br />
                         Email: iraja@rj.senac.br</p>
                 </div>
                 <div>
                     <img src={PGImage} className="pgimage" />
                     <div className="appicons">
-                        <img src={AppImage} className="appimages"/>
+                        <img src={AppImage} className="appimages" />
                         <img src={PlayImage} className="appimages" />
                     </div>
                 </div>

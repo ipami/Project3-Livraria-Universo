@@ -15,8 +15,8 @@ function Admin() {
                     <div className="emp-field">
                         <h3>Menu Funcionários</h3>
                         <div className="buttons-admin-menu">
-                        <Link to="/admin/newemployee"><button className="btn-admin-home admin-new-emp">Inserir funcionários</button></Link>
-                           <Link to="/admin/employee"><button className="btn-admin-home btn-admin-file">Gerenciar funcionários</button></Link>
+                            <Link to="/admin/newemployee"><button className="btn-admin-home admin-new-emp">Inserir funcionários</button></Link>
+                            <Link to="/admin/employee"><button className="btn-admin-home btn-admin-file">Gerenciar funcionários</button></Link>
                         </div>
                     </div>
                     <div className="book-field">

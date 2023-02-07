@@ -8,7 +8,7 @@ function Login() {
             <div className="mask d-flex align-items-center h-100">
                 <div className="container">
                     <div className="row justify-content-center">
- 
+
                         <div className="col-xl-5 col-md-8 bglogin ">
                             <h2 className="text-center text-white msgsucess"></h2>
                             <form className="rounded-2 shadow-5-strong p-5 " id="formLogin">
@@ -40,7 +40,7 @@ function Login() {
                                         </div>
 
                                         <div className="col text-center">
-                                           <Link to ='/login/forgot'> <p id="forgot">Esqueceu sua senha?</p></Link>
+                                            <Link to='/login/forgot'> <p id="forgot">Esqueceu sua senha?</p></Link>
                                         </div>
 
                                         <button type="submit" className="btn btn-primary btn-login recovery"
@@ -49,13 +49,13 @@ function Login() {
                                 </div>
                             </form>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-    </main >
+        </main >
     )
 
 }

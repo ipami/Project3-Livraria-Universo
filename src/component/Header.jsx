@@ -26,44 +26,45 @@ function Header(props) {
 
 
 
-return (<>{model == 'default'?(
-    <header className="Header">
-        <Link to="/" className="link-home"><img src={props.logo} className="Logo" /></Link>
-        <div className="header-right">
-            <div className="header-top">
-                <form className="search-box" action="/search" onSubmit={(e) => {
-                    let valor = document.getElementById('namesearch').value
-                    sessionStorage.setItem('namesearch', valor)
+    return (<>{model == 'default' ? (
+        <header className="Header">
+            <Link to="/" className="link-home"><img src={props.logo} className="Logo" /></Link>
+            <div className="header-right">
+                <div className="header-top">
+                    <form className="search-box" action="/search" onSubmit={(e) => {
+                        let valor = document.getElementById('namesearch').value
+                        sessionStorage.setItem('namesearch', valor)
 
                     }}>
-                    <input type="text" className="search-text" name="name" id="namesearch" placeholder="Pesquisar.."
-                        onChange={(e) => { setSearch(e.target.value) }} />
-                    <button type="submit" className="search-btn"  >
-                        <img className="loupe-blue" src={LoupeBlue} width="25px" height="25px" />
-                    </button>
+                        <input type="text" className="search-text" name="name" id="namesearch" placeholder="Pesquisar.."
+                            onChange={(e) => { setSearch(e.target.value) }} />
+                        <button type="submit" className="search-btn"  >
+                            <img className="loupe-blue" src={LoupeBlue} width="25px" height="25px" />
+                        </button>
 
-                </form>
-                <div className="div-login">
-                    <Link to="/login"><img src={LoginIcon} width="50px" height="50px" className="header-icon" /></Link>
-                    <p>Olá, bem vindo(a)!<br />Faça seu <Link to="/login"><strong>login</strong></Link></p>
+                    </form>
+                    <div className="div-login">
+                        <Link to="/login"><img src={LoginIcon} width="50px" height="50px" className="header-icon" /></Link>
+                        <p>Olá, bem vindo(a)!<br />Faça seu <Link to="/login"><strong>login</strong></Link></p>
+                    </div>
+
+                    <Link to="/cart"><img src={CartIcon} width="50px" height="50px" className="header-icon" /></Link>
                 </div>
-
-                <Link to="/cart"><img src={CartIcon} width="50px" height="50px" className="header-icon" /></Link>
+                <div className="header-bottom">
+                    <nav>
+                        {Menu(props)}
+                    </nav>
+                </div>
             </div>
-            <div className="header-bottom">
-                <nav>
-                    {Menu(props)}
-                </nav>
-            </div>
-        </div>
-    </header >):( <header className="header-admin">
-        <Link to="/admin" className="link-home-admin"><img src={props.logo} className="logo-admin" /></Link>
-        <h1 className="title-header">AMBIENTE DE GERENCIAMENTO</h1>
+        </header >) : (<header className="header-admin">
+            <Link to="/admin" className="link-home-admin"><img src={props.logo} className="logo-admin" /></Link>
+            <h1 className="title-header">AMBIENTE DE GERENCIAMENTO</h1>
 
-        <Link to="/" ><h4 className="logout">SAIR</h4></Link>
+            <Link to="/" ><h4 className="logout">SAIR</h4></Link>
 
-    </header >)}
+        </header >)}
     </>
-)}
+    )
+}
 
 export default (Header)

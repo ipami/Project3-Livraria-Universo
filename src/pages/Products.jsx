@@ -2,41 +2,31 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../css/Products.css'
-
+import blogFetch from "../axios/config";
 
 const Products = () => {
- 
+
 
   const [books, setBooks] = useState([])
 
   const getBooks = async () => {
-
     try {
-      const response = await axios.get('https://pj3-estao-servidos.onrender.com/book')
-
+      const response = await blogFetch.get("/book");
       const data = response.data;
 
-
-      console.log(data);
-
-
       setBooks(data);
-
-
     } catch (error) {
-      console.log(error)
-
+      console.log(error);
     }
+  };
 
-
-  }
 
   useEffect(() => {
 
     getBooks()
   }, [])
 
-  const toCorrect= (price) =>{
+  const toCorrect = (price) => {
     return price.replace(".", ",")
   }
 
@@ -78,7 +68,8 @@ const Products = () => {
         ))
       )}
     </div>
-</main>
-)}
+  </main>
+  )
+}
 
-    export default Products;
+export default Products;

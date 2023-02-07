@@ -12,7 +12,7 @@
 }
 
 
-.info-edit-book-update{
+.info-edit-book-update {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -65,60 +65,59 @@
 }
 
 .form-update input:focus,
-.form-update textarea:focus{
+.form-update textarea:focus {
     background-color: rgba(51, 0, 128, 0.512);
     color: white;
 }
 
 .form-update input:focus::placeholder,
-.form-update textarea:focus::placeholder{
+.form-update textarea:focus::placeholder {
     color: white;
 }
 
 .btn-update {
-	opacity: 0.7;
-	background-color: #146b38;
-	padding: 10px 20px;
-	width: 70%;
+    opacity: 0.7;
+    background-color: #146b38;
+    padding: 10px 20px;
+    width: 70%;
     margin-left: 100px;
-	font-size: 1rem;
-	border-radius: 3px;
-	text-align: center;
-	color: white;
+    font-size: 1rem;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
     border: 0;
     margin-left: 18%;
-    
+
 
 }
 
 .btn-update:hover {
-	background-color: #146b38;
-	color: white;
-	opacity: 1;
-	transition: opacity 0.5s;
+    background-color: #146b38;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .btn-back {
-	opacity: 0.7;
-	background-color: #4f146b;
-	padding: 10px 20px;
-	width: 70%;
+    opacity: 0.7;
+    background-color: #4f146b;
+    padding: 10px 20px;
+    width: 70%;
     margin-left: 100px;
-	font-size: 1rem;
-	border-radius: 3px;
-	text-align: center;
-	color: white;
+    font-size: 1rem;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
     border: 0;
     margin-left: 18%;
     transition: opacity 0.5s;
-    
+
 
 }
 
 .btn-back:hover {
-	background-color: #4f146b;
-	color: white;
-	opacity: 1;
-	
-}
+    background-color: #4f146b;
+    color: white;
+    opacity: 1;
 
+}

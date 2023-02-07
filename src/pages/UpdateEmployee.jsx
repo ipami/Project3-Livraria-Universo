@@ -35,7 +35,7 @@ const UpdateEmployee = () => {
   const editEmployee = async (e) => {
     e.preventDefault();
 
-    const emp = { name, office, department };
+
 
     await blogFetch.put(`/employee/${id}`, {
       id: id,
@@ -55,23 +55,23 @@ const UpdateEmployee = () => {
   return (<main className="book-update">
     <h2>Editando: {name}</h2>
 
- 
-      <div className="edit-book-update">
-        <form className="form-update" onSubmit={(e) => editEmployee(e)}>
-          <div className="form-control form-update">
-            <label >Nome:</label>
-            <input classname="update" type="text" name="name" id="name" placeholder="Digite o nome" onChange={(e) => setName(e.target.value)} value={name || ""} />
-            <label >Cargo:</label>
-            <input type="text" name="office" id="office" placeholder="Digite o cargo" onChange={(e) => setOffice(e.target.value)} value={office || ""}
-            />
-            <label >Departamento:</label>
-            <input type="text" name="department" id="department" placeholder="Digite o autor"
-              onChange={(e) => setDepartment(e.target.value)} value={department || ""} />
-          </div>
-          <input type="submit" value="Editar Funcionário" className="btn-update" />
-          <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>
-        </form>
-      </div>
+
+    <div className="edit-book-update">
+      <form className="form-update" onSubmit={(e) => editEmployee(e)}>
+        <div className="form-control form-update">
+          <label >Nome:</label>
+          <input classname="update" type="text" name="name" id="name" placeholder="Digite o nome" onChange={(e) => setName(e.target.value)} value={name || ""} />
+          <label >Cargo:</label>
+          <input type="text" name="office" id="office" placeholder="Digite o cargo" onChange={(e) => setOffice(e.target.value)} value={office || ""}
+          />
+          <label >Departamento:</label>
+          <input type="text" name="department" id="department" placeholder="Digite o autor"
+            onChange={(e) => setDepartment(e.target.value)} value={department || ""} />
+        </div>
+        <input type="submit" value="Editar Funcionário" className="btn-update" />
+        <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>
+      </form>
+    </div>
 
   </main>
   );

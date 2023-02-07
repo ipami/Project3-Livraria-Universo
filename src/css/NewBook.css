@@ -7,12 +7,12 @@
 
 }
 
-.image-new-newbook{
+.image-new-newbook {
     width: 40%;
     min-width: 250px;
 }
 
-.new-book{
+.new-book {
     width: 50%;
 
     padding: 2% 0;
@@ -73,56 +73,56 @@
 }
 
 .input-newbook input:focus,
-.textarea-newbook textarea:focus{
+.textarea-newbook textarea:focus {
     background-color: rgba(51, 0, 128, 0.512);
     color: white;
 }
 
 .input-newbook input:focus::placeholder,
-.textarea-newbook textarea:focus::placeholder{
+.textarea-newbook textarea:focus::placeholder {
     color: white;
 }
 
 
 
 .btn-newbook {
-	opacity: 0.7;
-	background-color: #146b38;
-	padding: 10px 20px;
-	width: 70%;
+    opacity: 0.7;
+    background-color: #146b38;
+    padding: 10px 20px;
+    width: 70%;
     margin-left: 100px;
-	font-size: 1rem;
-	border-radius: 3px;
-	text-align: center;
-	color: white;
+    font-size: 1rem;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
     border: none;
     margin-left: 18%;
-    
+
 
 }
 
 .btn-newbook:hover {
-	background-color: #146b38;
-	color: white;
-	opacity: 1;
-	transition: opacity 0.5s;
+    background-color: #146b38;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 
-.back-to-adminpage{
+.back-to-adminpage {
     background-color: #0e43c0
 }
 
-.back-to-adminpage:hover{
+.back-to-adminpage:hover {
     background-color: #0e43c0;
 }
 
 
 @media (max-width: 330px) {
 
-    .new-book{
+    .new-book {
 
         min-width: 240px;
-    
+
     }
 }
