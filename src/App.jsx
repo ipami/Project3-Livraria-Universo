@@ -1,16 +1,17 @@
 import './css/App.css';
-import { Outlet} from 'react-router-dom';
-
+import { Outlet } from 'react-router-dom';
+import { CartProvider } from './component/CartContext';
 
 
 function App() {
 
-  return (
+  return (<CartProvider>
     <div className="App">
 
-      <Outlet/>
+      <Outlet />
 
     </div>
+  </CartProvider>
   )
 }
 

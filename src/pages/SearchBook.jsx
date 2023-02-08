@@ -4,8 +4,14 @@ import { Link } from "react-router-dom";
 import React from "react";
 import '../css/Products.css';
 import blogFetch from "../axios/config";
+import { useCart } from "../component/CartContext";
 
 function SearchBook() {
+
+    const cart = useCart()
+    const add = (product) =>{
+      cart.addToCart(product)
+    }
 
     const [books, setBooks] = useState([])
 
@@ -76,7 +82,7 @@ function SearchBook() {
                     {books.length === 0 ? (<div className="loader"></div>) : (
 
                         (books.map((book) => ((
-                            filter(book.name) == "Encontrado" ? (
+                            filter(book.name) == "Encontrado" || filter(book.author) == "Encontrado"  || filter(book.publishing) == "Encontrado"? (
                                 <div className="product" key={book.id}>
                                     <img className="product-image" src={book.image} />
                                     <h4 className="product-name">{book.name}</h4>
@@ -84,10 +90,7 @@ function SearchBook() {
                                     <span className="product-parc">ou em até 10x de R$ {showParc(book.price)}</span>
                                     <div className="buttons">
                                         <Link to={`/products/${book.id}`} className="btn">Ler mais</Link>
-                                        {/* <Link className="btn">Comprar</Link>  */}
-
-
-                                        {/* onClick={() => addProductToCart(book)} */}
+                                        <button className="btn bg-success" onClick= {() => add(book)}>Comprar</button>
                                     </div>
                                 </div>
 

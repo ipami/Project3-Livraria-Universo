@@ -8,9 +8,15 @@ import LoupeBlue from "../images/loupe-blue.svg"
 import LoginIcon from "../images/iconlogin.png"
 import CartIcon from "../images/iconcart.png"
 import { useNavigate } from 'react-router-dom';
+import { useCart } from "./CartContext";
 
 
 function Header(props) {
+
+    const cart = useCart()
+    const itemsCount = Object.keys(cart.cart).reduce((prev, curr) =>{
+        return prev + cart.cart[curr].quantity
+    }, 0)
 
     const model = props.model
 
@@ -37,10 +43,10 @@ function Header(props) {
                     </form>
                     <div className="div-login">
                         <Link to="/login"><img src={LoginIcon} width="50px" height="50px" className="header-icon" /></Link>
-                        <p>Olá, bem vindo(a)!<br />Faça seu <Link to="/login"><strong>login</strong></Link></p>
+                        <p className=" pt-2">Olá, bem vindo(a)!<br />Faça seu <Link to="/login"><strong>login</strong></Link></p>
                     </div>
 
-                    <Link to="/cart"><img src={CartIcon} width="50px" height="50px" className="header-icon" /></Link>
+                    <Link to="/cart"><img src={CartIcon} width="50px" height="50px" className="header-icon text-sucess" />{ itemsCount >0 && <span>({itemsCount})</span>}</Link>
                 </div>
                 <div className="header-bottom">
                     <nav>

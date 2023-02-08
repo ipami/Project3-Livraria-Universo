@@ -1,11 +1,17 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import '../css/Products.css'
 import blogFetch from "../axios/config";
+import { useCart } from "../component/CartContext";
+
 
 const Products = () => {
 
+  const cart = useCart()
+  const add = (product) =>{
+    cart.addToCart(product)
+  }
 
   const [books, setBooks] = useState([])
 
@@ -59,10 +65,8 @@ const Products = () => {
             <span className="product-parc">ou em até 10x de R$ {showParc(book.price)}</span>
             <div className="buttons">
               <Link to={`/products/${book.id}`} className="btn">Ler mais</Link>
-              {/* <Link className="btn">Comprar</Link>  */}
+              <button className="btn bg-success" onClick= {() => add(book)}>Comprar</button>
 
-
-              {/* onClick={() => addProductToCart(book)} */}
             </div>
           </div>
         ))
