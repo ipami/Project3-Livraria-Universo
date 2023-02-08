@@ -18,14 +18,6 @@ function Header(props) {
     const [search, setSearch] = useState("")
 
 
-
-
-
-
-
-
-
-
     return (<>{model == 'default' ? (
         <header className="Header">
             <Link to="/" className="link-home"><img src={props.logo} className="Logo" /></Link>

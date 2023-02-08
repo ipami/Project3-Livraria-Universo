@@ -22,6 +22,7 @@ import Footer from './component/Footer';
 import AdminEmployee from './pages/AdminEmployee';
 import UpdateEmployee from './pages/UpdateEmployee';
 import NewEmployee from './pages/NewEmployee';
+import ShoppingCart from './pages/Cart';
 
 
 
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/cart',
-        element: <Header model="default" logo={Logo}/>
+        element: [<Header model="default" logo={Logo}/>, <ShoppingCart/>]
       },
       {
         path: '/checkout',
@@ -103,6 +104,7 @@ const router = createBrowserRouter([
         path: '/admin/client',
         element: [<Header model="logged" logo={Logo}/>, <AdminBook />],
       },
+
 
       // {
       //   path: 'user',
