@@ -101,6 +101,12 @@ header .Logo {
   color: #1eb65d;
 }
 
+.btn-cart{
+	background-color: black;
+  color:#1eb65d;
+  border: none;
+}
+
 
 .header-admin {
   display: flex;

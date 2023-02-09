@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom"
 import '../css/Login.css'
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
+    const isAdmin = () => {
+        const email = document.getElementById('email')
+        const password = document.getElementById('password')
+        const action = document.getElementById('formLogin')
+        if (email.value == "admin@admin.com" && password.value == "souadmin") {
+            // action.setAttribute("action","/admin")
+            navigate("/admin");
+        } 
+
+    }
+
+
     return (
         <main className="logincontainer">
 
@@ -11,19 +25,19 @@ function Login() {
 
                         <div className="col-xl-5 col-md-8 bglogin ">
                             <h2 className="text-center text-white msgsucess"></h2>
-                            <form className="rounded-2 shadow-5-strong p-5 " id="formLogin">
+                            <form className="rounded-2 shadow-5-strong p-5 " id="formLogin" action="/login">
 
 
                                 <div className="hddmsg">
                                     <div className="form-outline mb-4">
-                                        <input type="email" id="form1Example1" className="form-control inputfield email"
-                                            placeholder="E-mail" oninput="emailValidation()" />
+                                        <input type="email" id="email" className="form-control inputfield email"
+                                            placeholder="E-mail" />
                                         <span className="span-email">Digite um email válido. Exemplo: exemplo@exemplo.com</span>
                                     </div>
 
 
                                     <div className="form-outline mb-4">
-                                        <input type="password" id="form1Example2" className="form-control inputfield pass"
+                                        <input type="password" id="password" className="form-control inputfield pass"
                                             placeholder="Senha" />
                                     </div>
 
@@ -32,8 +46,8 @@ function Login() {
 
                                             <div className="form-check">
                                                 <input className="form-check-input checkboxRemember" type="checkbox" value=""
-                                                    id="form1Example3" checked />
-                                                <label className="form-check-label remember" for="form1Example3">
+                                                    id="form1Example3" defaultChecked />
+                                                <label className="form-check-label remember" htmlFor="form1Example3">
                                                     Lembrar-me
                                                 </label>
                                             </div>
@@ -44,7 +58,9 @@ function Login() {
                                         </div>
 
                                         <button type="submit" className="btn btn-primary btn-login recovery"
-                                            id="btnsend">ENVIAR</button>
+                                            id="btnsend" onClick={()=>{
+                                                isAdmin()
+                                            }}>ENVIAR</button>
                                     </div>
                                 </div>
                             </form>

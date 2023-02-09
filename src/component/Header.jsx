@@ -42,11 +42,11 @@ function Header(props) {
 
                     </form>
                     <div className="div-login">
-                        <Link to="/login"><img src={LoginIcon} width="50px" height="50px" className="header-icon" /></Link>
-                        <p className=" pt-2">Olá, bem vindo(a)!<br />Faça seu <Link to="/login"><strong>login</strong></Link></p>
+                    <button className="btn-cart"><Link to="/login"><img src={LoginIcon} width="50px" height="50px" className="header-icon" /></Link>
+                        <p className=" pt-2">Olá, bem vindo(a)!<br />Faça seu <Link to="/login"><strong>login</strong></Link></p></button>
                     </div>
 
-                    <Link to="/cart"><img src={CartIcon} width="50px" height="50px" className="header-icon text-sucess" />{ itemsCount >0 && <span>({itemsCount})</span>}</Link>
+                    <Link to="/cart"><button className="btn-cart"><img src={CartIcon} width="50px" height="50px" className="header-icon text-sucess" />{ itemsCount >0 && <span>({itemsCount})</span>}</button></Link>
                 </div>
                 <div className="header-bottom">
                     <nav>
@@ -65,4 +65,4 @@ function Header(props) {
     )
 }
 
-export default (Header)
+export default Header

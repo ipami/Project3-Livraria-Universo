@@ -27,11 +27,11 @@
 .inputfield:focus {
   border: 2px solid #4235cdda;
   background-color: black;
-  color: #4235cdda;
+  color: #8379f8;
 }
 
 .inputfield:focus::placeholder {
-  color: #654bf9;
+  color:#8379f8;
 }
 
 

@@ -37,15 +37,15 @@ const NewEmployee = () => {
                 <label >Nome:</label>
                 <input type="text" name="name" id="name" placeholder="Digite o nome"
                     onChange={(e) => setName(e.target.value)} className="input-newbook"
-                />
+                    required/>
                 <label >Cargo:</label>
                 <input type="text" name="office" id="office" placeholder="Digite o cargo"
                     onChange={(e) => setOffice(e.target.value)} className="input-newbook"
-                />
+                    required/>
                 <label >Departamento:</label>
                 <input type="text" name="department" id="department" placeholder="Digite o departamento"
                     onChange={(e) => setDepartment(e.target.value)} className="input-newbook"
-                />
+                    required/>
             </div>
             <input type="submit" value="Cadastrar Funcionário" className="btn-newbook" />
             <Link to="/admin"><button className="btn-newbook back-to-adminpage" >Voltar</button></Link>

@@ -8,7 +8,7 @@ function Menu(props) {
         return (
 
             <ul className="Menu">
-                <Link to="/about"><li>SOBRE NÓS</li></Link>
+                <Link to="/about"><li>SOBRE</li></Link>
                 <Link to="/products"><li>NOSSOS LIVROS</li></Link>
                 <Link to="/contact"><li>FALE CONOSCO</li></Link>
                 <li>        </li>

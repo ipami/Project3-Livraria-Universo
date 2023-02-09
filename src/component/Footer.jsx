@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import PGImage from "../images/pgimages.png"
 import AppImage from "../images/app.png"
 import PlayImage from "../images/play.png"
+import Linkedin from "../images/linkedinfooter.png"
+import Facebook from "../images/facebook.png"
+import Instagram from "../images/instagram.png"
+import Twitter from "../images/twitter.png"
+
 
 function Footer(props) {
     return (
@@ -14,7 +19,7 @@ function Footer(props) {
                 <div className="footer-top-center">
                     <h4> MAPA DO SITE </h4>
                     <ul>
-                        <Link to="/about"><li>SOBRE NÓS</li></Link>
+                        <Link to="/about"><li>SOBRE</li></Link>
                         <Link to="/products"><li>NOSSOS LIVROS</li></Link>
                         <Link to="/contact"><li>FALE CONOSCO</li></Link>
 
@@ -31,6 +36,12 @@ function Footer(props) {
                     <div className="appicons">
                         <img src={AppImage} className="appimages" />
                         <img src={PlayImage} className="appimages" />
+                    </div>
+                    <div className="socialicons">
+                        <a href="https://www.linkedin.com/"><img src={Linkedin} className="socialimages" /></a>
+                        <a href="https://www.facebook.com/"><img src={Facebook} className="socialimages" /></a>
+                        <a href="https://www.instagram.com/"><img src={Instagram} className="socialimages" /></a>
+                        <a href="https://www.twitter.com/"><img src={Twitter} className="socialimages" /></a>
                     </div>
                 </div>
             </div>

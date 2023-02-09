@@ -29,14 +29,14 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  height: 430px;
+  height: 460px;
   width: 320px;
   padding: 10px;
   border: 4px solid black;
   border-radius: 20px;
   background-color: black;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   align-self: center;
   color: white;
   margin-bottom: 2rem;

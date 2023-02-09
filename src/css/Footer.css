@@ -68,3 +68,13 @@ footer a {
 
   max-width: 80%;
 }
+
+.socialimages{
+  width: 10%;
+  margin: 0 3%;
+  cursor: pointer;
+}
+
+.socialimages:hover{
+    transform: scale(1.1);
+}

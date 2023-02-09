@@ -1,0 +1,31 @@
+.bgoutcontact{
+    background-image: url("../images/bgcontact.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-contact{
+background-color:rgba(63, 210, 137, 0.9);
+
+}
+
+.titlecontact{
+    color: black;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 26px;
+    text-transform: uppercase;
+
+}
+
+.bgformcontact{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.error-message{
+    color: red;
+    z-index: 10px;
+}

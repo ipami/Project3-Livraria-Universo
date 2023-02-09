@@ -65,19 +65,19 @@ const UpdateBook = () => {
         <form className="form-update" onSubmit={(e) => UpBook(e)}>
           <div className="form-control form-update">
             <label >Título:</label>
-            <input classname="update" type="text" name="title" id="title" placeholder="Digite o título" onChange={(e) => setTitle(e.target.value)} value={title || ""} />
+            <input classname="update" type="text" name="title" id="title" placeholder="Digite o título" onChange={(e) => setTitle(e.target.value)} value={title || ""} required/>
             <label >Editora:</label>
             <input type="text" name="publishing" id="publishing" placeholder="Digite a editora" onChange={(e) => setPublishing(e.target.value)} value={publishing || ""}
-            />
+            required/>
             <label >Author:</label>
             <input type="text" name="author" id="author" placeholder="Digite o autor"
-              onChange={(e) => setAuthor(e.target.value)} value={author || ""} />
+              onChange={(e) => setAuthor(e.target.value)} value={author || ""} required/>
             <label >Preço:(ex.: 45.99)</label>
             <input type="number" name="price" id="price" min="0" max="100000" step=".01" placeholder="Digite o valor" onChange={(e) => setPrice(e.target.value)} value={price || ""}
-            />
+           required />
             <label >Endereço da imagem:</label>
             <input type="text" name="image" id="image" placeholder="Digite o endereço da imagem" onChange={(e) => setImage(e.target.value)} value={image || ""}
-            />
+            required/>
           </div>
 
           <div className="form-control form-update">

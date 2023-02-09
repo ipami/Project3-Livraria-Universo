@@ -23,6 +23,8 @@ import AdminEmployee from './pages/AdminEmployee';
 import UpdateEmployee from './pages/UpdateEmployee';
 import NewEmployee from './pages/NewEmployee';
 import ShoppingCart from './pages/Cart';
+import Contact from './pages/Contact';
+import AdminClient from './pages/AdminClient';
 
 
 
@@ -41,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/search',
         element: [<Header model="default" logo={Logo}/>, <SearchBook/>, <Footer logo={Logo}/>],
+      },
+      {
+        path: '/contact',
+        element: [<Header model="default" logo={Logo}/>, <Contact/>, <Footer logo={Logo}/>],
       },
       {
         path: '/about',
@@ -102,7 +108,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/admin/client',
-        element: [<Header model="logged" logo={Logo}/>, <AdminBook />],
+        element: [<Header model="logged" logo={Logo}/>, <AdminClient />],
       },
 
 

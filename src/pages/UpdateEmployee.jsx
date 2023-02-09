@@ -60,13 +60,13 @@ const UpdateEmployee = () => {
       <form className="form-update" onSubmit={(e) => editEmployee(e)}>
         <div className="form-control form-update">
           <label >Nome:</label>
-          <input classname="update" type="text" name="name" id="name" placeholder="Digite o nome" onChange={(e) => setName(e.target.value)} value={name || ""} />
+          <input classname="update" type="text" name="name" id="name" placeholder="Digite o nome" onChange={(e) => setName(e.target.value)} value={name || ""} required/>
           <label >Cargo:</label>
           <input type="text" name="office" id="office" placeholder="Digite o cargo" onChange={(e) => setOffice(e.target.value)} value={office || ""}
-          />
+          required/>
           <label >Departamento:</label>
           <input type="text" name="department" id="department" placeholder="Digite o autor"
-            onChange={(e) => setDepartment(e.target.value)} value={department || ""} />
+            onChange={(e) => setDepartment(e.target.value)} value={department || ""} required/>
         </div>
         <input type="submit" value="Editar Funcionário" className="btn-update" />
         <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>

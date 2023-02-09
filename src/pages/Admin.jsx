@@ -31,7 +31,7 @@ function Admin() {
                     <div className="client-field">
                         <h3>Menu Cliente</h3>
                         <div className="buttons-admin-menu">
-                            <button className="btn-admin-home btn-admin-file">Gerenciar cadastros de clientes</button>
+                            <Link to="/admin/client"><button className="btn-admin-home btn-admin-file">Gerenciar cadastros de clientes</button></Link>
                         </div>
                     </div>
                 </div>

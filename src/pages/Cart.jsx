@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../component/CartContext";
+import Products from "./Products";
 
 
 
 function ShoppingCart() {
+
 	const cart = useCart()
 	const add = (product) => {
 		cart.addToCart(product)
@@ -12,7 +15,6 @@ function ShoppingCart() {
 
 	const changeQuantity = (id) => (evt) => {
 		cart.changeQuantity(id, Number(evt.target.value))
-		console.log(id)
 	}
 	const remove = (id) => {
 		cart.removeFromCart(id)
@@ -24,15 +26,29 @@ function ShoppingCart() {
 
 	const multiply = (price, mult) => {
 		const calc = Number(price * mult)
-		console.log(calc)
 		return calc.toFixed(2)
 	}
+
+	const calcTotal = (items) => {
+		let soma = 0;
+		console.log(soma)
+		console.log(items)
+		Object.keys(cart.cart).map((key) => {
+			const { product, quantity } = cart.cart[key]
+			soma += Number(multiply(product.price, quantity))
+			console.log(soma)
+		})
+		return soma.toFixed(2).replace(".", ",")
+
+	}
+
 	return (<main className="flex-fill">
 		<div className="container">
 			<h1 className="title mt-4">Carrinho de Compras</h1>
 			<ul className="list-group mb-3">
 				{Object.keys(cart.cart).map((key) => {
 					const { product, quantity } = cart.cart[key]
+
 
 					return (
 						<li className="list-group-item py-3" key={key}>
@@ -57,7 +73,7 @@ function ShoppingCart() {
 								<div className="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
 									<div className="input-group">
 
-										<input type="number" className="form-control border-dark" id={product.id} defaultValue={quantity} min="1"onBlur={changeQuantity(key)} />
+										<input type="number" className="form-control border-dark text-center" id={product.id} defaultValue={quantity} min="1" onClick={changeQuantity(key)} />
 
 										<button className="btn btn-outline-danger border-dark btn-sm" type="button" onClick={() => { remove(key) }} >
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -67,7 +83,7 @@ function ShoppingCart() {
 									</div>
 									<div className="text-end mt-2">
 										<small className="text-secondary">Valor unitário: R$ {toCorrect(product.price)}</small><br />
-										<span className="text-dark">Valor: R$ {multiply(product.price, quantity).replace(".", ",")}</span>
+										<span className="text-dark">Valor: R$ <div className="prices">{multiply(product.price, quantity).replace(".", ",")}</div></span>
 									</div>
 								</div>
 							</div>
@@ -77,14 +93,14 @@ function ShoppingCart() {
 				<li className="list-group-item py-3">
 					<div className="text-end">
 						<h4 className="text-dark mb-1">
-							Valor Total: R$ A fazer
+							Valor Total: R$ {calcTotal(cart.cart)}
 						</h4>
 						<h5 className="text-dark mb-3">
 							Frete Grátis
 						</h5>
-						<a href="#" className="btn btn-outline-success btn-lg">
+						<Link to="/products" className="btn btn-outline-success btn-lg">
 							Continuar Comprando
-						</a>
+						</Link>
 						<a href="#" className="btn btn-outline-danger btn-lg ms-2 mt-xs-3">Finalizar Compra</a>
 					</div>
 				</li>
