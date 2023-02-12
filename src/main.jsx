@@ -26,6 +26,7 @@ import ShoppingCart from './pages/Cart';
 import Contact from './pages/Contact';
 import AdminClient from './pages/AdminClient';
 import UpdateClient from './pages/UpdateClient';
+import About from './pages/About';
 
 
 
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: [<Header model="default" logo={Logo}/>],
+        element: [<Header model="default" logo={Logo}/>, <About/>, <Footer logo={Logo}/>],
       },
       {
         path: '/products',

@@ -1,0 +1,88 @@
+.mainAbout {
+  background-image: url("../images/bgcontact.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.divAbout {
+  margin: 1rem;
+  padding: 2rem;
+  /* background-color: rgba(63, 210, 137, 0.9); */
+  /* border: 2px solid black; */
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.titleAbout {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.textAbout {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.teamAbout{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.containerTeamAbout{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-around;
+  align-content: center;
+}
+
+/* equipe */
+.equipe{
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.equipe:hover{
+  background-color: rgb(63, 210, 137);
+  padding: 8px;
+  border: 2px solid white;
+}
+.nameIndivdual{
+  background-color: black;
+  padding: 2px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.imgIndiv{
+  border-radius: 50%;
+  border: 2px solid white;
+  max-width: 24rem;
+}
+
+.aSocial:link, a:visited {
+  background-color:  rgb(63, 210, 137);
+  color: white;
+  padding: 5px 5px;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.aSocial:hover, a:active {
+  background-color:  rgb(47, 160, 104);
+}
