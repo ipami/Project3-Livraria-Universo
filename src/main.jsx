@@ -25,6 +25,7 @@ import NewEmployee from './pages/NewEmployee';
 import ShoppingCart from './pages/Cart';
 import Contact from './pages/Contact';
 import AdminClient from './pages/AdminClient';
+import UpdateClient from './pages/UpdateClient';
 
 
 
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
       {
         path: '/admin/client',
         element: [<Header model="logged" logo={Logo}/>, <AdminClient />],
+      },
+      {
+        path: '/admin/updateclient/:id',
+        element: [<Header model="logged" logo={Logo}/>, <UpdateClient/>],
       },
 
 

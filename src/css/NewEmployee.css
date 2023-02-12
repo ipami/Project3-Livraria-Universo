@@ -1,0 +1,137 @@
+.main-newemployee {
+    padding: 3% 8% 5% 8%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #009685;
+
+}
+
+.image-new-newemployee {
+    width: 30%;
+    min-width: 250px;
+
+
+}
+
+.insert-employee {
+    background-color: white;
+    padding: 2% 5% 0 5%;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.new-employee {
+    width: 50%;
+    padding: 2% 0;
+    min-width: 300px;
+
+}
+
+
+.title-new-employee {
+    margin: 2% 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 30px;
+
+}
+
+
+
+
+
+.form-newemployee {
+    width: 100%;
+
+
+
+}
+
+.form-newemployee {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    min-width: 450px;
+
+}
+
+.form-newemployee label {
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.form-newemployee input {
+    margin-bottom: 20px;
+
+}
+
+.input-newemployee {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid black;
+    min-width: 150px;
+}
+
+.input-newemployee:focus {
+    background-color: rgba(0, 150, 132, 0.276);
+
+}
+
+.input-newemployee:focus::placeholder {
+    color: black;
+}
+
+
+
+.btn-newemployee {
+    text-align: center;
+    opacity: 0.7;
+    background-color: #146b38;
+    padding: 10px 20px;
+    width: 70%;
+    font-size: 1rem;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+    border: none;
+    margin-left: 15%;
+
+
+
+}
+
+.btn-newemployee:hover {
+    background-color: #146b38;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+.back-to-adminpage {
+    background-color: #0e43c0;
+    margin-left: 0;
+}
+
+.back-to-adminpage:hover {
+    background-color: #0e43c0;
+}
+
+
+
+@media (max-width: 500px) {
+    .form-newemployee {
+        min-width: 150px;
+
+    }
+
+    .new-employee {
+        min-width: 140px;
+    }
+}

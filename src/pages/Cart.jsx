@@ -60,8 +60,8 @@ function ShoppingCart() {
 								</div>
 								<div className="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
 									<h4>
-										<b><a href="#" className="text-decoration-none text-dark">
-											{product.name.toUpperCase()}</a></b>
+										<b className="text-decoration-none text-dark">
+											{product.name.toUpperCase()}</b>
 									</h4>
 									<h5>
 										{product.author}

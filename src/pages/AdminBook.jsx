@@ -47,7 +47,6 @@ const AdminBook = () => {
               <div className="bookaction-admin" key={book.id}>
                 <img className="book-image-admin" src={book.image} />
                 <h2 className="book-name-admin">{book.name}</h2>
-                {/* <p>{book.description}	</p> */}
                 <div className="actions">
                   <Link className="btn edit-btn" to={`/admin/updatebook/${book.id}`}>
                     Editar

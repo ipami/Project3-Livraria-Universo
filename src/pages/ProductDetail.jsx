@@ -1,12 +1,26 @@
 import blogFetch from "../axios/config";
-
 import { useState, useEffect } from "react";
-
 import { useParams } from "react-router-dom";
-
 import '../css/ProductDetail.css'
+import { useCart } from "../component/CartContext";
+
+
 
 const Book = () => {
+
+  const cart = useCart()
+
+
+
+
+  const add = (product, quantity) =>{
+ 
+    cart.addWithQuantity(product, quantity)
+  }
+
+  
+
+
   const { id } = useParams();
   const [book, setBook] = useState([]);
 
@@ -41,10 +55,11 @@ const Book = () => {
             <p>{book.publishing}</p>
 
             <p className="description-detail">{book.description}</p>
-            {/* onClick={() => addProductToCart(book)}> */}
 
-            <input type="number" className="qtn-book-detail" id="qtn-book-detail" min="1" />
-            <button className="btn-detail"	onClick= {() => add(book)}>	Adicionar ao carrinho</button>
+            <input type="number" className="qtn-book-detail" id="qtn-book-detail" min="1" defaultValue="1" />
+            <button className="btn-detail"	onClick= {() => {
+              const quantity = document.getElementById("qtn-book-detail")
+              add(book, Number(quantity.value))}}>	Adicionar ao carrinho</button>
           </div>
         </div>
       )}

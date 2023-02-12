@@ -188,4 +188,11 @@ header .Logo {
     flex-direction: column;
     align-items: center;
   }
+
+  .title-header {
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  
 }

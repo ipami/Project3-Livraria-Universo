@@ -86,3 +86,16 @@
     ;
 
 }
+
+@media (max-width: 430px) {
+
+    .btn-admin-home {
+
+        width: 200px;
+
+    }
+    .emp-field, .book-field, .client-field {
+        height: 250px;
+        padding: 2% 4%;
+    }
+}

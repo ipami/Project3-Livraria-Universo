@@ -38,7 +38,6 @@ const NewBook = () => {
     return (<main className="main-newbook">
         <img src={imageNew} className="image-new-newbook" />
         <div className="new-book-newbook">
-            {/* <h2>Inserir novo livro:</h2> */}
             <form onSubmit={(e) => createBook(e)} className="form-newbook">
                 <div className="form-control form-newbook">
                     <label >Título:</label>
