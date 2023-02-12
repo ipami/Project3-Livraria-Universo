@@ -4,7 +4,6 @@ import { useCart } from "../component/CartContext";
 import Products from "./Products";
 
 
-
 function ShoppingCart() {
 
 	const cart = useCart()
