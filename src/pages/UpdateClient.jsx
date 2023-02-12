@@ -44,6 +44,24 @@ const UpdateClient = () => {
     }
   };
 
+
+  const checkCEP = (e) =>{
+    const cep = e.target.value.replace(/\D/g, '');
+    console.log(cep)
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then(res => res.json())
+    .then(data => {console.log(data)
+      setStreet(data.logradouro);
+      setNeighborhood(data.bairro);
+      setCity(data.localidade);
+    
+    }
+    )
+    
+    
+  }
+
+
   const editClient = async (e) => {
     e.preventDefault();
 
@@ -81,7 +99,7 @@ const UpdateClient = () => {
           <label >Nome:</label>
           <input classname="update" type="text" name="name" id="name" placeholder="Digite o nome" onChange={(e) => setName(e.target.value)} value={name || ""} required/>
           <label >CEP:</label>
-          <input classname="update" type="text" name="cep" id="cep" placeholder="Digite o cep" onChange={(e) => setCep(e.target.value)} value={cep || ""} required/>
+          <input classname="update" type="text" name="cep" id="cep" placeholder="Digite o cep"  onBlur={(e) => checkCEP(e)}  onChange={(e) => setCep(e.target.value)} value={cep || ""} required/>
           <label >Rua:</label>
           <input classname="update" type="text" name="street" id="street" placeholder="Digite a rua" onChange={(e) => setStreet(e.target.value)} value={street || ""} required/>
           <label >Número:</label>
