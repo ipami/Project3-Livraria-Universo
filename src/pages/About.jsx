@@ -18,41 +18,53 @@ const About = () => {
         <h1 className="teamAbout">Nossa equipe</h1>
         <br />
         <div className="containerTeamAbout">
-          <div class="row row-cols-2">
-            <div className="tiago">
+          {/* <div class="row row-cols-auto"> */}
+            {/* Team 1 */}
+            <div className="equipe">
               <a href='https://github.com/Tiago-S-Oliveira' target="_blank" >
-                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgTiago"></img>
+                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgIndiv"></img>
               </a>
               <br />
-              <h1 className="nameIndivdual">Tiago Oliveira</h1>
-              <a href='https://github.com/Tiago-S-Oliveira' target="_blank" className="aSocial">GitHub</a>
-              <br />
-              <br />
-              <a href='www.linkedin.com/in/tiagosantosoliveira97' target="_blank" className="aSocial">LinkedIn</a>
-            </div><div className="tiago">
-              <a href='https://github.com/Tiago-S-Oliveira' target="_blank" >
-                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgTiago"></img>
-              </a>
-              <br />
-              <h1 className="nameIndivdual">Tiago Oliveira</h1>
-              <a href='https://github.com/Tiago-S-Oliveira' target="_blank" className="aSocial">GitHub</a>
-              <br />
-              <br />
-              <a href='www.linkedin.com/in/tiagosantosoliveira97' target="_blank" className="aSocial">LinkedIn</a>
-            </div><div className="tiago">
-              <a href='https://github.com/Tiago-S-Oliveira' target="_blank" >
-                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgTiago"></img>
-              </a>
-              <br />
-              <h1 className="nameIndivdual">Tiago Oliveira</h1>
-              <a href='https://github.com/Tiago-S-Oliveira' target="_blank" className="aSocial">GitHub</a>
+              <h1 className="nameIndivdual">Davih Mello</h1>
+              <a href='https://github.com/DavihMello' target="_blank" className="aSocial">GitHub</a>
               <br />
               <br />
               <a href='www.linkedin.com/in/tiagosantosoliveira97' target="_blank" className="aSocial">LinkedIn</a>
             </div>
-            <div className="tiago">
+
+            {/* Team 2 */}
+
+            <div className="equipe">
               <a href='https://github.com/Tiago-S-Oliveira' target="_blank" >
-                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgTiago"></img>
+                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgIndiv"></img>
+              </a>
+              <br />
+              <h1 className="nameIndivdual">MAtheus Rasta</h1>
+              <a href='https://github.com/FortunaProg' target="_blank" className="aSocial">GitHub</a>
+              <br />
+              <br />
+              <a href='www.linkedin.com/in/tiagosantosoliveira97' target="_blank" className="aSocial">LinkedIn</a>
+            </div>
+
+            {/* Team 3 */}
+
+            <div className="equipe">
+              <a href='https://github.com/Tiago-S-Oliveira' target="_blank" >
+                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgIndiv"></img>
+              </a>
+              <br />
+              <h1 className="nameIndivdual">Paloma Avelino</h1>
+              <a href='https://github.com/ipami' target="_blank" className="aSocial">GitHub</a>
+              <br />
+              <br />
+              <a href='www.linkedin.com/in/tiagosantosoliveira97' target="_blank" className="aSocial">LinkedIn</a>
+            </div>
+
+            {/* Team 4 */}
+
+            <div className="equipe">
+              <a href='https://github.com/Tiago-S-Oliveira' target="_blank" >
+                <img src="https://avatars.githubusercontent.com/u/113737079?v=4" className="imgIndiv"></img>
               </a>
               <br />
               <h1 className="nameIndivdual">Tiago Oliveira</h1>
@@ -62,7 +74,7 @@ const About = () => {
               <a href='www.linkedin.com/in/tiagosantosoliveira97' target="_blank" className="aSocial">LinkedIn</a>
             </div>
 
-          </div>
+          {/* </div> */}
         </div>
 
 

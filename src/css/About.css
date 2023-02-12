@@ -41,36 +41,38 @@
   color: white;
   border-radius: 20px;
   padding: 2rem;
-  /* display: flex;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   height: auto;
-  align-content: flex-start; */
+  justify-content: space-around;
+  align-content: center;
 }
 
 /* equipe */
+.equipe{
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.equipe:hover{
+  background-color: rgb(63, 210, 137);
+  padding: 8px;
+  border: 2px solid white;
+}
 .nameIndivdual{
   background-color: black;
   padding: 2px;
   border: 2px solid white;
   border-radius: 5px;
 }
-.tiago{
-  border-radius: 30px;
-  padding: 10px;
-}
 
-.tiago:hover{
-  background-color: rgb(63, 210, 137);
-  padding: 8px;
-  border: 2px solid white;
-}
-
-.imgTiago{
+.imgIndiv{
   border-radius: 50%;
   border: 2px solid white;
   max-width: 24rem;
 }
+
 .aSocial:link, a:visited {
   background-color:  rgb(63, 210, 137);
   color: white;
