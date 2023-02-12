@@ -11,8 +11,8 @@
 .divAbout {
   margin: 1rem;
   padding: 2rem;
-  background-color: rgba(63, 210, 137, 0.95);
-  border: 2px solid black;
+  /* background-color: rgba(63, 210, 137, 0.9); */
+  /* border: 2px solid black; */
   border-radius: 20px;
   justify-content: center;
 }
@@ -46,4 +46,41 @@
   flex-wrap: wrap;
   height: auto;
   align-content: flex-start; */
+}
+
+/* equipe */
+.nameIndivdual{
+  background-color: black;
+  padding: 2px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.tiago{
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.tiago:hover{
+  background-color: rgb(63, 210, 137);
+  padding: 8px;
+  border: 2px solid white;
+}
+
+.imgTiago{
+  border-radius: 50%;
+  border: 2px solid white;
+  max-width: 24rem;
+}
+.aSocial:link, a:visited {
+  background-color:  rgb(63, 210, 137);
+  color: white;
+  padding: 5px 5px;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.aSocial:hover, a:active {
+  background-color:  rgb(47, 160, 104);
 }
