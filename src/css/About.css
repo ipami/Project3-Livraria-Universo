@@ -1,0 +1,49 @@
+.mainAbout {
+  background-image: url("../images/bgcontact.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.divAbout {
+  margin: 1rem;
+  padding: 2rem;
+  background-color: rgba(63, 210, 137, 0.95);
+  border: 2px solid black;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.titleAbout {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.textAbout {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.teamAbout{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.containerTeamAbout{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+  align-content: flex-start; */
+}
