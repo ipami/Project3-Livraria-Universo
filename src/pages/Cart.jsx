@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../component/CartContext";
 import Products from "./Products";
-
+import {useNavigate} from "react-router-dom";
 
 function ShoppingCart() {
+	const navigate = useNavigate();
 
 	const cart = useCart()
 	const add = (product) => {
@@ -30,8 +31,6 @@ function ShoppingCart() {
 
 	const calcTotal = (items) => {
 		let soma = 0;
-		console.log(soma)
-		console.log(items)
 		Object.keys(cart.cart).map((key) => {
 			const { product, quantity } = cart.cart[key]
 			soma += Number(multiply(product.price, quantity))
@@ -100,7 +99,13 @@ function ShoppingCart() {
 						<Link to="/products" className="btn btn-outline-success btn-lg">
 							Continuar Comprando
 						</Link>
-						<a href="#" className="btn btn-outline-danger btn-lg ms-2 mt-xs-3">Finalizar Compra</a>
+						<button className="btn btn-outline-danger btn-lg ms-2 mt-xs-3"
+						onClick={ () =>{ 
+							const vazio = null
+							return Object.keys(cart.cart).length !== 0? 
+							navigate("/checkout") : navigate("/products")
+							
+						}}>Finalizar Compra</button>
 					</div>
 				</li>
 			</ul>

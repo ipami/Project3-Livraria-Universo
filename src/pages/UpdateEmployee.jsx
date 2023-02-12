@@ -1,8 +1,6 @@
 import blogFetch from "../axios/config";
 import { useState, useEffect } from "react";
-
 import { useParams, useNavigate, Link } from "react-router-dom";
-
 import '../css/UpdateBook.css'
 
 const UpdateEmployee = () => {

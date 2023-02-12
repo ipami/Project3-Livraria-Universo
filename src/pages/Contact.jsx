@@ -18,7 +18,11 @@ function Contact() {
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(schema)
       });
-      const onSubmit = data => console.log(data);
+      const onSubmit = data =>{ console.log(data);
+    const msg = document.getElementById('form-message-success')
+    msg.innerText = 'Mensagem enviada com sucesso! :)'
+
+    }
     
 
 
@@ -34,8 +38,7 @@ function Contact() {
                                 <div className="col-md-6 bgformcontact">
                                     <div className="contact-wrap w-100 p-lg-5 p-4">
                                         <h3 className="mb-4 titlecontact">Envie sua mensagem :)</h3>
-                                        <div id="form-message-warning" className="mb-4"></div>
-                                        <div id="form-message-success" className="mb-4">
+                                        <div id="form-message-success" className="mb-4 text-success">
                                         </div>
                                         <form onSubmit={handleSubmit(onSubmit)} id="contactForm" name="contactForm" className="contactForm">
                                             <div className="row">
@@ -53,7 +56,7 @@ function Contact() {
                                                 </div>
                                                 <div className="col-md-12 mt-2 mb-2">
                                                     <div className="form-group">
-                                                        <input {...register("tel")}type="text" className="form-control" name="subject" id="subject" placeholder="Assunto" />
+                                                        <input {...register("subject")}type="text" className="form-control" name="subject" id="subject" placeholder="Assunto" />
                                                         <p className="error-message">{errors.subject?.message}</p>
                                                     </div>
                                                 </div>

@@ -12,6 +12,7 @@ import { useCart } from "./CartContext";
 
 
 function Header(props) {
+    const navigate = useNavigate();
 
     const cart = useCart()
     const itemsCount = Object.keys(cart.cart).reduce((prev, curr) =>{
@@ -29,12 +30,13 @@ function Header(props) {
             <Link to="/" className="link-home"><img src={props.logo} className="Logo" /></Link>
             <div className="header-right">
                 <div className="header-top">
-                    <form className="search-box" action="/search" onSubmit={(e) => {
-                        let valor = document.getElementById('namesearch').value
-                        sessionStorage.setItem('namesearch', valor)
+                    <form className="search-box"  onSubmit={(e) => {
+
+                        sessionStorage.setItem('namesearch', search)
+                        navigate("/search");
 
                     }}>
-                        <input type="text" className="search-text" name="name" id="namesearch" placeholder="Pesquisar.."
+                        <input type="text" className="search-text" id="namesearch" placeholder="Pesquisar.."
                             onChange={(e) => { setSearch(e.target.value) }} />
                         <button type="submit" className="search-btn"  >
                             <img className="loupe-blue" src={LoupeBlue} width="25px" height="25px" />

@@ -9,9 +9,10 @@ function Login() {
         const password = document.getElementById('password')
         const action = document.getElementById('formLogin')
         if (email.value == "admin@admin.com" && password.value == "souadmin") {
-            // action.setAttribute("action","/admin")
             navigate("/admin");
-        } 
+        } else {
+            navigate("/logged");
+        }
 
     }
 
@@ -24,8 +25,7 @@ function Login() {
                     <div className="row justify-content-center">
 
                         <div className="col-xl-5 col-md-8 bglogin ">
-                            <h2 className="text-center text-white msgsucess"></h2>
-                            <form className="rounded-2 shadow-5-strong p-5 " id="formLogin" action="/login">
+                            <form className="rounded-2 shadow-5-strong p-5 " id="formLogin">
 
 
                                 <div className="hddmsg">
