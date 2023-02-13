@@ -27,6 +27,9 @@ import Contact from './pages/Contact';
 import AdminClient from './pages/AdminClient';
 import UpdateClient from './pages/UpdateClient';
 import About from './pages/About';
+import CheckOut from './pages/Checkout';
+import Logged from './pages/Logged';
+import RecoveryMsg from './pages/RecoveryMsg';
 
 
 
@@ -40,120 +43,102 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: [<Header model="default" logo={Logo}/>,<Home chamada={"Confira nossas novidades literárias!"} imgbanner={ImgBanner} logo={Logo} />, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <Home chamada={"Confira nossas novidades literárias!"} imgbanner={ImgBanner} logo={Logo} />, <Footer logo={Logo} />],
       },
       {
         path: '/search',
-        element: [<Header model="default" logo={Logo}/>, <SearchBook/>, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <SearchBook />, <Footer logo={Logo} />],
       },
       {
         path: '/contact',
-        element: [<Header model="default" logo={Logo}/>, <Contact/>, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <Contact />, <Footer logo={Logo} />],
       },
       {
         path: '/about',
-        element: [<Header model="default" logo={Logo}/>, <About/>, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <About />, <Footer logo={Logo} />],
       },
       {
         path: '/products',
-        element: [<Header model="default" logo={Logo}/>,  <Products/>, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <Products />, <Footer logo={Logo} />],
       },
       {
-        element: [<Header model="default" logo={Logo}/>, <Book/>, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <Book />, <Footer logo={Logo} />],
         path: '/products/:id',
       },
       {
         path: '/cart',
-        element: [<Header model="default" logo={Logo}/>, <ShoppingCart/>]
+        element: [<Header model="default" logo={Logo} />, <ShoppingCart />]
       },
       {
         path: '/checkout',
-        element: <Header model="default" logo={Logo}/>
+        element: [<Header model="default" logo={Logo} />, <CheckOut />, <Footer logo={Logo} />]
+      },
+      {
+        path: '/success',
+        element: [<Header model="default" logo={Logo} />, <CheckOut />, <Footer logo={Logo} />]
       },
       {
         path: '/login',
-        element: [<Header model="default" logo={Logo}/>, <Login />, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <Login />, <Footer logo={Logo} />],
+      },
+      {
+        path: '/logged',
+        element: [<Header model="default" logo={Logo}/>, <Logged/>, <Footer logo={Logo}/>],
       },
       {
         path: '/login/forgot',
-        element: [<Header model="default" logo={Logo}/>, <Forgot />, <Footer logo={Logo}/>],
+        element: [<Header model="default" logo={Logo} />, <Forgot />, <Footer logo={Logo} />],
       },
-      
+      {
+        path: '/login/recovery',
+        element: [<Header model="default" logo={Logo}/>, <RecoveryMsg />, <Footer logo={Logo}/>],
+      },
       {
         path: '/admin',
-        element: [<Header model="logged" logo={Logo}/>, <Admin />],
+        element: [<Header model="logged" logo={Logo} />, <Admin />],
       },
-      
+
       {
         path: '/admin/updatebook/:id',
-        element: [<Header model="logged" logo={Logo}/>, <UpdateBook/>],
+        element: [<Header model="logged" logo={Logo} />, <UpdateBook />],
       },
       {
         path: '/admin/newbook',
-        element: [<Header model="logged" logo={Logo}/>, <NewBook/>],
+        element: [<Header model="logged" logo={Logo} />, <NewBook />],
       },
       {
         path: '/admin/book',
-        element: [<Header model="logged" logo={Logo}/>, <AdminBook />],
+        element: [<Header model="logged" logo={Logo} />, <AdminBook />],
       },
       {
         path: '/admin/employee',
-        element: [<Header model="logged" logo={Logo}/>, <AdminEmployee />],
+        element: [<Header model="logged" logo={Logo} />, <AdminEmployee />],
       },
       {
         path: '/admin/newemployee',
-        element: [<Header model="logged" logo={Logo}/>, <NewEmployee/>],
+        element: [<Header model="logged" logo={Logo} />, <NewEmployee />],
       },
       {
         path: '/admin/updateemployee/:id',
-        element: [<Header model="logged" logo={Logo}/>, <UpdateEmployee />],
+        element: [<Header model="logged" logo={Logo} />, <UpdateEmployee />],
       },
       {
         path: '/admin/client',
-        element: [<Header model="logged" logo={Logo}/>, <AdminClient />],
+        element: [<Header model="logged" logo={Logo} />, <AdminClient />],
       },
       {
         path: '/admin/updateclient/:id',
-        element: [<Header model="logged" logo={Logo}/>, <UpdateClient/>],
+        element: [<Header model="logged" logo={Logo} />, <UpdateClient />],
+      },
+      {
+        path: 'login?',
+        element: <Navigate to="/login" />
+      },
+      {
+        path: '/search?',
+        element: <Navigate to="/search" />
       },
 
-
-      // {
-      //   path: 'user',
-      //   element: <Header model="login" logo={Logo}/>
-      // },
-      // {
-      //   path: 'admin',
-      //   element: <Header model="login" logo={Logo}/>,
-      //   children: [
-      //     {
-      //       path: 'sales',
-      //       element: <Contact />
-      //     },
-      //     {
-      //       path: 'employee',
-      //       element: <Contact />
-      //     },
-      //     {
-      //       path: 'book',
-      //       element: <Contact />
-      //     },
-      //   ]
-      // },
-      // {
-      //   path: 'contact',
-      //   element: <Contact />
-      // },
-      // {
-      //   path: '/contact/:id',
-      //   element: <ContactDetails />
-      // },
-
-      // // Navigate para páginas não existentes
-      // {
-      //   path: 'oldcontact',
-      //   element: <Navigate to="/contact" />
-      // },
     ]
   }
 
