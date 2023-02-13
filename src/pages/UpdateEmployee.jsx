@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import '../css/UpdateBook.css'
 
-const UpdateEmployee = () => {
+function UpdateEmployee () {
   const navigate = useNavigate();
 
   const [name, setName] = useState();

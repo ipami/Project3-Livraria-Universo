@@ -6,7 +6,7 @@ import blogFetch from "../axios/config";
 import { useCart } from "../component/CartContext";
 
 
-const Products = () => {
+function Products () {
 
   const cart = useCart()
   const add = (product) =>{

@@ -6,7 +6,7 @@ import { useCart } from "../component/CartContext";
 
 
 
-const Book = () => {
+function Book () {
 
   const cart = useCart()
 

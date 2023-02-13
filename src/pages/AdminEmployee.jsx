@@ -1,13 +1,10 @@
 import blogFetch from "../axios/config";
-
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
-
 import "../css/AdminEmployee.css";
 import axios from "axios";
 
-const AdminEmployee = () => {
+function AdminEmployee () {
     const [employee, setEmployee] = useState([]);
 
     const getEmployees = async () => {
@@ -58,9 +55,7 @@ const AdminEmployee = () => {
                             <td>{emp.department}</td>
                             <td>
                                 <div className="actions">
-                                    <Link className="btn edit-btn" to={`/admin/updateemployee/${emp.id}`}>
-                                        Editar
-                                    </Link>
+                                    <Link to={`/admin/updateemployee/${emp.id}`}><button className="btn edit-btn"> Editar</button></Link>
                                     <button className="btn delete-btn" onClick={() => deleteEmployee(emp.id)}>
                                         Excluir
                                     </button>

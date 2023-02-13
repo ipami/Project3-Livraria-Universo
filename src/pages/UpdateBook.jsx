@@ -5,7 +5,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 
 import '../css/UpdateBook.css'
 
-const UpdateBook = () => {
+function UpdateBook () {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState();

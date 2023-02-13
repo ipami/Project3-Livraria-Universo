@@ -8,7 +8,7 @@ import "../css/NewBook.css";
 
 import imageNew from "../images/insira.png"
 
-const NewBook = () => {
+function NewBook () {
     const navigate = useNavigate();
 
     const [title, setTitle] = useState();

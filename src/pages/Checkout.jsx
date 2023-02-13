@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function CheckOut() {
+function CheckOut () {
 
 
     const navigate = useNavigate();

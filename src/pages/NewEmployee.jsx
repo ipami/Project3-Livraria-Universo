@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/NewEmployee.css";
 import imageEmployee from "../images/employee.jpg"
 
-const NewEmployee = () => {
+function NewEmployee () {
     const navigate = useNavigate();
 
     const [name, setName] = useState();

@@ -1,13 +1,10 @@
 import blogFetch from "../axios/config";
-
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
-
 import "../css/AdminEmployee.css";
 import axios from "axios";
 
-const AdminClient = () => {
+function AdminClient () {
     const [clients, setClients] = useState([]);
 
     const getClients = async () => {
@@ -58,8 +55,8 @@ const AdminClient = () => {
                             <td>{client.city}</td>
                             <td>
                                 <div className="actions">
-                                    <Link className="btn edit-btn" to={`/admin/updateclient/${client.id}`}>
-                                        Editar
+                                    <Link  to={`/admin/updateclient/${client.id}`}>
+                                      <button className="btn edit-btn"> Editar</button> 
                                     </Link>
                                     <button className="btn delete-btn" onClick={() => deleteEmployee(client.id)}>
                                         Excluir

@@ -8,7 +8,7 @@ import axios from "axios";
 
 
 
-const AdminBook = () => {
+function AdminBook () {
   const [books, setBooks] = useState([]);
 
   const getBooks = async () => {
@@ -48,8 +48,8 @@ const AdminBook = () => {
                 <img className="book-image-admin" src={book.image} />
                 <h2 className="book-name-admin">{book.name}</h2>
                 <div className="actions">
-                  <Link className="btn edit-btn" to={`/admin/updatebook/${book.id}`}>
-                    Editar
+                  <Link  to={`/admin/updatebook/${book.id}`}>
+                   <button className="btn edit-btn">Editar</button> 
                   </Link>
                   <button className="btn delete-btn" onClick={() => deleteBook(book.id)}>
                     Excluir

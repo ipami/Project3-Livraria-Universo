@@ -5,7 +5,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 
 import '../css/UpdateBook.css'
 
-const UpdateClient = () => {
+function UpdateClient () {
   const navigate = useNavigate();
 
   const [name, setName] = useState();

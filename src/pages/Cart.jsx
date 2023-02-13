@@ -4,7 +4,7 @@ import { useCart } from "../component/CartContext";
 import Products from "./Products";
 import {useNavigate} from "react-router-dom";
 
-function ShoppingCart() {
+function ShoppingCart () {
 	const navigate = useNavigate();
 
 	const cart = useCart()
@@ -96,8 +96,9 @@ function ShoppingCart() {
 						<h5 className="text-dark mb-3">
 							Frete Grátis
 						</h5>
-						<Link to="/products" className="btn btn-outline-success btn-lg">
+						<Link to="/products"><button className="btn btn-outline-success btn-lg">
 							Continuar Comprando
+							</button>
 						</Link>
 						<button className="btn btn-outline-danger btn-lg ms-2 mt-xs-3"
 						onClick={ () =>{ 

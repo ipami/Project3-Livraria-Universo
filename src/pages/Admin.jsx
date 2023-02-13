@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../css/Admin.css"
 
-function Admin() {
+function Admin () {
 
     return (
         <div className="container-admin">

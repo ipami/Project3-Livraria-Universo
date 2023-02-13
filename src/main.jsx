@@ -30,6 +30,7 @@ import About from './pages/About';
 import CheckOut from './pages/Checkout';
 import Logged from './pages/Logged';
 import RecoveryMsg from './pages/RecoveryMsg';
+import MsgSuccess from './pages/MsgSuccess';
 
 
 
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/cart',
-        element: [<Header model="default" logo={Logo} />, <ShoppingCart />]
+        element: [<Header model="default" logo={Logo} />, <ShoppingCart />, <Footer logo={Logo} />]
       },
       {
         path: '/checkout',
@@ -75,7 +76,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/success',
-        element: [<Header model="default" logo={Logo} />, <CheckOut />, <Footer logo={Logo} />]
+        element: [<Header model="default" logo={Logo} />, <MsgSuccess />, <Footer logo={Logo} />]
       },
       {
         path: '/login',

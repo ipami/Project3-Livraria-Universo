@@ -1,9 +1,6 @@
 import '../css/About.css'
-// import { Link } from "react-router-dom";
-// import blogFetch from "../axios/config";
-// import { useCart } from "../component/CartContext";
 
-const About = () => {
+function About(){
 
   return (
     <main className="mainAbout">

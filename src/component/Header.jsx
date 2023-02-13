@@ -30,11 +30,8 @@ function Header(props) {
             <Link to="/" className="link-home"><img src={props.logo} className="Logo" /></Link>
             <div className="header-right">
                 <div className="header-top">
-                    <form className="search-box"  onSubmit={(e) => {
-
-                        sessionStorage.setItem('namesearch', search)
+                    <form className="search-box"  onSubmit={(e) => { sessionStorage.setItem('namesearch', search)
                         navigate("/search");
-
                     }}>
                         <input type="text" className="search-text" id="namesearch" placeholder="Pesquisar.."
                             onChange={(e) => { setSearch(e.target.value) }} />
