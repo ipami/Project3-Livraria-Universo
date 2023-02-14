@@ -38,7 +38,7 @@ No projeto foi utilizado HTML5, CSS3, Javascript, BOOTSTRAP, React. Além da API
 
 O projeto está em sua primeira versão, e será atualizado conforme os resultados de futuros testes ou para fins de melhora na limpeza e estruturação do código.
 
-📌 Link do projeto no render: 
+📌 Link do projeto no render: https://livraria-universo.onrender.com
 
 <div align="center">
 <img src="https://cdn.discordapp.com/attachments/283392827721908225/1075098607365140571/logo.png">
