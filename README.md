@@ -13,6 +13,7 @@ O tema escolhido para o site foi livraria. O site em si é um protótipo de e-co
 <h2>📑 Passo a passo </h2>
 
 Este projeto foi criado com o [React App](https://pt-br.reactjs.org/) através do [Vite](https://vitejs.dev/).
+Foi utilizado também o seguinte Json-server: https://pj3-estao-servidos.onrender.com/
 
 <h3> Scripts disponíveis </h3>
 No diretório do projeto, você pode executar:
