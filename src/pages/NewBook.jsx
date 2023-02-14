@@ -66,7 +66,7 @@ function NewBook () {
                     <textarea name="description" className="textarea-newbook" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)} required></textarea>
                 </div>
                 <input type="submit" value="Cadastrar Livro" className="btn-newbook" />
-                <Link to="/admin"><button className="btn-newbook back-to-adminpage" >Voltar</button></Link>
+                <Link to="/admin"><button className="btn-newbook backmenu back-to-adminpage" >Voltar</button></Link>
             </form>
         </div>
     </main>

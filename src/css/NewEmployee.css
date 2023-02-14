@@ -116,14 +116,15 @@
 
 .back-to-adminpage {
     background-color: #0e43c0;
-    margin-left: 0;
 }
 
 .back-to-adminpage:hover {
     background-color: #0e43c0;
 }
 
-
+.back{
+    margin-left: 0
+}
 
 @media (max-width: 500px) {
     .form-newemployee {

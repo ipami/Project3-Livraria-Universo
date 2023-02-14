@@ -84,7 +84,7 @@ function UpdateBook () {
             <label >Descrição:</label>
             <textarea name="description" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)} value={description || ""}></textarea>
           </div>
-          <input type="submit" value="Editar Post" className="btn-update" />
+          <input type="submit" value="Editar Livro" className="btn-update" />
           <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>
         </form>
       </div>

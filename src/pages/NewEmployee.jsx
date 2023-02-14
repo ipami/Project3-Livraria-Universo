@@ -47,7 +47,7 @@ function NewEmployee () {
                         required />
                 </div>
                 <input type="submit" value="Cadastrar Funcionário" className="btn-newemployee" />
-                <Link to="/admin"><button className="btn-newemployee back-to-adminpage" >Voltar</button></Link>
+                <Link to="/admin"><button className="btn-newemployee back back-to-adminpage" >Voltar</button></Link>
             </form>
             </div>
     </main>
