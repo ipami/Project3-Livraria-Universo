@@ -3,7 +3,25 @@ import { useCart } from "../component/CartContext";
 import blogFetch from "../axios/config";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { object, string, number, date } from 'yup';
+import * as yup from "yup";
 
+const schema = yup.object({
+    name: yup.string().min(3 ,"O nome precisa ter no mínimo 3 caracteres").required("O nome é obrigatório"),
+    cpf: yup.string().min(11 ,"Hm... A quantidade de dígitos do CPF está correta? Um CPF possui 11 dígitos").max(11 ,"Hm... A quantidade de dígitos do CPF está correta? Um CPF possui 11 dígitos").required("O CPF é obrigatório"),
+    email: yup.string().required("O email é obrigatório").email("Email inválido. exemplo@exemplo.com"),
+    tel: yup.string().required("O número de telefone é obrigatório"),
+    login: yup.string().required("O login é obrigatório"),
+    password: yup.string().required("A senha é obrigatória"),
+    cep: yup.string().min(8 ,"Hm... A quantidade de dígitos do CEP está correta? Um CEP possui 8 dígitos").max(8 ,"Hm... A quantidade de dígitos do CEP está correta? Um CEP possui 8 dígitos").required("O CEP é obrigatório"),
+    number: yup.string().required("O número da residência é obrigatório"),
+    namecard: yup.string().required("Informe o nome presente no cartão"),
+    numbercard: yup.string().required("Informe o número do cartão"),
+    data: yup.string().required("Informe a data de expiração do cartão"),
+    cvv: yup.string().required("Informe o código de verificação do cartão"),
+  }).required();
 
 
 function CheckOut () {
@@ -11,44 +29,16 @@ function CheckOut () {
 
     const navigate = useNavigate();
 
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [tel, setTel] = useState();
-    const [login, setLogin] = useState();
-    const [password, setPassword] = useState();
-    const [cpf, setCPF] = useState();
-    const [street, setStreet] = useState();
-    const [number, setNumber] = useState();
-    const [neighborhood, setNeighborhood] = useState();
-    const [city, setCity] = useState();
-    const [uf, setUF] = useState();
-    const [cep, setCep] = useState();
-
-
-    const createClient = async (e) => {
-        e.preventDefault();
-
-        await blogFetch.post("/client", {
-            id: '',
-            name: name,
-            email: email,
-            tel: tel,
-            login: login,
-            password: password,
-            cpf: cpf,
-            street: street,
-            number: number,
-            neighborhood: neighborhood,
-            city: city,
-            uf: uf,
-            cep: cep
-        });
-
+    const { register, handleSubmit, formState:{ errors } } = useForm({
+        resolver: yupResolver(schema)
+      });
+      const onSubmit = data =>{ console.log(data)
         clearCart()
-
         navigate("/success");
     };
 
+
+    
 
 
 
@@ -105,10 +95,10 @@ function CheckOut () {
         fetch(`https://viacep.com.br/ws/${cep}/json/`)
             .then(res => res.json())
             .then(data => {
-                setStreet(data.logradouro);
-                setNeighborhood(data.bairro);
-                setCity(data.localidade);
-                setUF(data.uf);
+                document.getElementById("street").value = data.logradouro
+                document.getElementById("neighborhood").value = data.bairro
+                document.getElementById("city").value = data.localidade
+                document.getElementById("uf").value =data.uf
 
             }
             )
@@ -118,7 +108,7 @@ function CheckOut () {
 
 
     return (
-        <div class="container pt-5 pb-5">
+        <div className="container pt-5 pb-5">
 
             <div className="row">
                 <div className="col-md-4 order-md-2 mb-4 mt-5">
@@ -152,29 +142,32 @@ function CheckOut () {
                 </div>
                 <div className="col-md-8 order-md-1">
                     <h4 className="mb-3 txtmainhome mb-5">Formulário de Compra</h4>
-                    <form className="needs-validation" onSubmit={(e) => createClient(e)}>
+                    <form className="needs-validation" onSubmit={handleSubmit(onSubmit)}>
                         <div className="row">
                             <div className="col mb-3">
                                 <label htmlFor="primeiroNome">Nome</label>
-                                <input onChange={(e) => setName(e.target.value)}  type="text" className="form-control" id="name" required />
-                            
+                                <input {...register("name")}  type="text" className="form-control" id="name" />
+                                <p className="error-message">{errors.name?.message}</p>
                             </div>
                         </div>
 
                         <div className="mb-3">
                             <label htmlFor="cpf">CPF</label>
-                            <input onChange={(e) => setCPF(e.target.value)} type="text" className="form-control" id="cpf" required  />
+                            <input {...register("cpf")} type="text" className="form-control" id="cpf"  />
+                            <p className="error-message">{errors.cpf?.message}</p>
 
                         </div>
 
                         <div className="mb-3">
                             <label htmlFor="email">Email</label>
-                            <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email"  required />
+                            <input {...register("email")} type="email" className="form-control" id="email"  />
+                            <p className="error-message">{errors.email?.message}</p>
 
                         </div>
                         <div className="mb-3">
                             <label htmlFor="tel">Telefone</label>
-                            <input onChange={(e) => setTel(e.target.value)} type="tel" className="form-control" id="tel" required/>
+                            <input {...register("tel")} type="tel" className="form-control" id="tel"/>
+                            <p className="error-message">{errors.tel?.message}</p>
 
                         </div>
                         <div className="mb-3">
@@ -183,43 +176,51 @@ function CheckOut () {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text">@</span>
                                 </div>
-                                <input onChange={(e) => setLogin(e.target.value)} type="text" className="form-control" id="login"  required />
+                                <input {...register("login")} type="text" className="form-control" id="login"  />
+                                <p className="error-message">{errors.login?.message}</p>
 
                             </div>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="password">Senha</label>
-                            <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="senha" required/>
+                            <input {...register("password")} type="password" className="form-control" id="senha"/>
+                            <p className="error-message">{errors.password?.message}</p>
 
                         </div>
             
 
                         <div className="mb-3">
-                            <div class="row g-3">
+                            <div className="row g-3">
                                 <label htmlFor="endereco">Endereço</label>
-                                <div class="col-sm">
-                                    <input onChange={(e) => setCep(e.target.value)} type="number" class="form-control mb-3" placeholder="CEP" onBlur={checkCEP} required/>
+                                <div className="col-sm">
+                                    <input {...register("cep")} type="text" className="form-control mb-3" placeholder="CEP" onBlur={checkCEP}/>
+                                    <p className="error-message">{errors.cep?.message}</p>
                                 </div>
-                                <div class="col-sm-7">
-                                    <input onChange={(e) => setStreet(e.target.value)} type="text" class="form-control" placeholder="Rua, Av., Estrada..." defaultValue={street} />
+                                <div className="col-sm-7">
+                                    <input {...register("street")} type="text" className="form-control" id="street" placeholder="Rua, Av., Estrada..."  />
+                                    <p className="error-message">{errors.street?.message}</p>
                                 </div>
 
-                                <div class="col-sm">
-                                    <input onChange={(e) => setNumber(e.target.value)} type="Number" class="form-control" placeholder="Número" />
+                                <div className="col-sm">
+                                    <input {...register("number")} type="Number" className="form-control" placeholder="Número" />
+                                    <p className="error-message">{errors.number?.message}</p>
                                 </div>
 
                             </div>
 
-                            <div class="row g-3">
+                            <div className="row g-3">
 
-                                <div class="col-sm">
-                                    <input onChange={(e) => setNeighborhood(e.target.value)} type="text" class="form-control mb-3" placeholder="Bairro" required defaultValue={neighborhood} />
+                                <div className="col-sm">
+                                    <input {...register("neighborhood")} type="text" className="form-control mb-3" id="neighborhood" placeholder="Bairro"  />
+                                    <p className="error-message">{errors.neighborhood?.message}</p>
                                 </div>
-                                <div class="col-sm">
-                                    <input onChange={(e) => setCity(e.target.value)} type="text" class="form-control mb-3" placeholder="Cidade" required defaultValue={city} />
+                                <div className="col-sm">
+                                    <input {...register("city")} type="text" className="form-control mb-3" id="city" placeholder="Cidade"  />
+                                    <p className="error-message">{errors.city?.message}</p>
                                 </div>
-                                <div class="col-sm">
-                                    <input onChange={(e) => setUF(e.target.value)} type="text" class="form-control" placeholder="Estado" required defaultValue={uf} />
+                                <div className="col-sm">
+                                    <input {...register("uf")}  type="text" className="form-control" id="uf" placeholder="Estado"  />
+                                    <p className="error-message">{errors.uf?.message}</p>
                                 </div>
 
                             </div>
@@ -234,7 +235,7 @@ function CheckOut () {
 
                         <div className="d-block my-3">
                             <div className="custom-control custom-radio">
-                                <input id="credito" name="paymentMethod" type="radio" className="custom-control-input" checked required />
+                                <input id="credito" name="paymentMethod" type="radio" className="custom-control-input" defaultChecked />
                                 <label className="custom-control-label" htmlFor="credito">Cartão de crédito</label>
                             </div>
                   
@@ -242,22 +243,24 @@ function CheckOut () {
                         <div className="row">
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="cc-nome">Nome no cartão</label>
-                                <input type="text" className="form-control" id="cc-nome" required />
+                                <input {...register("namecard")} type="text" className="form-control" id="cc-nome" />
+                                <p className="error-message">{errors.namecard?.message}</p>
                                 <small className="text-muted">Nome completo, como mostrado no cartão.</small>
 
                             </div>
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="cc-numero">Número do cartão de crédito</label>
-                                <input type="text" className="form-control" id="cc-numero" required />
+                                <input {...register("numbercard")} type="text" className="form-control" id="cc-numero" />
+                                <p className="error-message">{errors.numbercard?.message}</p>
 
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-3 mb-3">
-                                <label for="pais">Parcelas</label>
-                                <select class="custom-select d-block w-100" id="parcelas" required>
-                                    <option value="">Escolha...</option>
-                                    <option>À vista R${optionParc(1, calcTotal(cart.cart))}</option>
+                                <label htmlFor="parc">Parcelas</label>
+                                <select {...register("parc")} className="custom-select d-block w-100" id="parc">
+                                    
+                                    <option selected>À vista R${optionParc(1, calcTotal(cart.cart))}</option>
                                     <option>2x de R${optionParc(2, calcTotal(cart.cart))}</option>
                                     <option>3x de R${optionParc(3, calcTotal(cart.cart))}</option>
                                     <option>4x de R${optionParc(4, calcTotal(cart.cart))}</option>
@@ -269,15 +272,18 @@ function CheckOut () {
                                     <option>10x de R${optionParc(10, calcTotal(cart.cart))}</option>
 
                                 </select>
+                                <p className="error-message">{errors.parc?.message}</p>
                             </div>
                             <div className="col-md-3 mb-3">
-                                <label htmlFor="cc-expiracao">Data de expiração(MM/AA)</label>
-                                <input type="text" className="form-control" id="cc-expiracao" placeholder="" required />
+                                <label htmlFor="data">Data de expiração(MM/AA)</label>
+                                <input {...register("data")}  type="text" className="form-control" id="data"  />
+                                <p className="error-message">{errors.data?.message}</p>
 
                             </div>
                             <div className="col-md-3 mb-3">
-                                <label htmlFor="cc-cvv">CVV</label>
-                                <input type="text" className="form-control" id="cc-cvv" placeholder="" required />
+                                <label htmlFor="cvv">CVV</label>
+                                <input {...register("cvv")} type="text" className="form-control" id="cvv"  />
+                                <p className="error-message">{errors.cvv?.message}</p>
                             </div>
                         </div>
                         <hr className="mb-4" />

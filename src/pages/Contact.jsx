@@ -19,7 +19,9 @@ function Contact() {
         resolver: yupResolver(schema)
       });
       const onSubmit = data =>{ console.log(data);
+        const form = document.getElementById('contactForm')
     const msg = document.getElementById('form-message-success')
+    form.reset()
     msg.innerText = 'Mensagem enviada com sucesso! :)'
 
     }

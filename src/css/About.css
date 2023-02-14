@@ -20,6 +20,8 @@
 .titleAbout {
   background-color: black;
   color: white;
+  font-size: calc(15px, 5vw, 30px);
+  font-weight: 800;
   border-radius: 20px;
 }
 
@@ -28,12 +30,15 @@
   color: white;
   border-radius: 20px;
   padding: 1rem;
+  
 }
 
 .teamAbout{
   background-color: black;
   color: white;
   border-radius: 20px;
+  font-size: calc(15px, 5vw, 30px);
+  font-weight: 800;
 }
 
 .containerTeamAbout{
@@ -51,7 +56,7 @@
 
 /* equipe */
 .equipe{
-  border-radius: 30px;
+  border-radius: 2%;
   padding: 10px;
 }
 
@@ -68,12 +73,13 @@
 }
 
 .imgIndiv{
-  border-radius: 50%;
+  border-radius: 2%;
   border: 2px solid white;
-  max-width: 24rem;
+  max-width: 16rem;
+  max-height: 16rem;
 }
 
-.aSocial:link, a:visited {
+.aSocial:link, .aSocial:visited {
   background-color:  rgb(63, 210, 137);
   color: white;
   padding: 5px 5px;
@@ -83,6 +89,6 @@
   text-decoration: none;
 }
 
-.aSocial:hover, a:active {
+.aSocial:hover, .aSocial:active {
   background-color:  rgb(47, 160, 104);
 }
