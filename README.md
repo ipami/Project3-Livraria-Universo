@@ -12,7 +12,7 @@ O tema escolhido para o site foi livraria. O site em si é um protótipo de e-co
 
 <h2>📑 Passo a passo </h2>
 
-Este projeto foi inicializado com o [React App](https://pt-br.reactjs.org/) através do [Vite](https://vitejs.dev/).
+Este projeto foi criado com o [React App](https://pt-br.reactjs.org/) através do [Vite](https://vitejs.dev/).
 
 <h3> Scripts disponíveis </h3>
 No diretório do projeto, você pode executar:
@@ -25,8 +25,8 @@ A página será recarregada quando você fizer alterações.
 Você também pode ver quaisquer erro no seu console.
 
 
-<h3> Saiba Mais <h3>
-Saiba mais na documentação do [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) e do [Vite](https://vitejs.dev/).
+<h3> Saiba Mais </h3>
+Saiba mais na documentação do <a href="https://pt-br.reactjs.org/">React App</a> e do <a href="https://vitejs.dev/">Vite</a>.
 
 
 <h2>🛠️ Tecnologias utilizadas</h2>
@@ -38,6 +38,10 @@ No projeto foi utilizado HTML5, CSS3, Javascript, BOOTSTRAP, React. Além da API
 
 O projeto está em sua primeira versão, e será atualizado conforme os resultados de futuros testes ou para fins de melhora na limpeza e estruturação do código.
 
-
-
 📌 Link do projeto no render: 
+
+<div align="center">
+<img src="https://cdn.discordapp.com/attachments/283392827721908225/1075098607365140571/logo.png">
+</div>
+
+
