@@ -34,6 +34,8 @@ function UpdateClient () {
       setName(data.name);
       setEmail(data.email);
       setTel(data.tel);
+      setLogin(data.login);
+      setCPF(data.cpf);
       setPassword(data.password);
       setStreet(data.street);
       setNumber(data.number);

@@ -1,17 +1,48 @@
 import { Link } from "react-router-dom"
 import '../css/Login.css'
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import blogFetch from "../axios/config";
 
 function Login() {
     const navigate = useNavigate();
-    const isAdmin = () => {
-        const email = document.getElementById('email')
+
+    const [clients, setClients] = useState([]);
+
+    const getClients = async () => {
+        try {
+            const response = await blogFetch.get("/client");
+
+            const data = response.data;
+
+            setClients(data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        getClients();
+    }, []);
+
+    const isAdmin = (e) => {
+        e.preventDefault()
+        const input = document.getElementById('login')
         const password = document.getElementById('password')
-        const action = document.getElementById('formLogin')
-        if (email.value == "admin@admin.com" && password.value == "souadmin") {
+        if (input.value == "admin@admin.com" && password.value == "souadmin") {
             navigate("/admin");
         } else {
-            navigate("/logged");
+
+            for(let i = 0; i < clients.length; i++){
+
+                if((clients[i].email == input.value || clients[i].login == input.value )&& clients[i].password == password.value ){
+                navigate("/logged");
+            } else{
+                const message = document.getElementById('seminfo')
+                message.innerText = "Login ou senha incorretos."
+            }
+            }
+
         }
 
     }
@@ -30,9 +61,9 @@ function Login() {
 
                                 <div className="hddmsg">
                                     <div className="form-outline mb-4">
-                                        <input type="email" id="email" className="form-control inputfield email"
-                                            placeholder="E-mail" />
-                                        <span className="span-email">Digite um email válido. Exemplo: exemplo@exemplo.com</span>
+                                        <p className="error-message" id="seminfo"></p>
+                                        <input type="text" id="login" className="form-control inputfield email"
+                                            placeholder="Digite seu email ou login" />
                                     </div>
 
 
@@ -58,8 +89,8 @@ function Login() {
                                         </div>
 
                                         <button type="submit" className="btn btn-primary btn-login recovery"
-                                            id="btnsend" onClick={()=>{
-                                                isAdmin()
+                                            id="btnsend" onClick={(e)=>{
+                                                isAdmin(e)
                                             }}>ENVIAR</button>
                                     </div>
                                 </div>

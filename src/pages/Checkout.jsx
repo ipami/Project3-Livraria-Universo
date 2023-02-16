@@ -15,7 +15,7 @@ const schema = yup.object({
     tel: yup.string().required("O número de telefone é obrigatório"),
     login: yup.string().required("O login é obrigatório"),
     password: yup.string().required("A senha é obrigatória"),
-    cep: yup.string().min(8 ,"Hm... A quantidade de dígitos do CEP está correta? Um CEP possui 8 dígitos").max(8 ,"Hm... A quantidade de dígitos do CEP está correta? Um CEP possui 8 dígitos").required("O CEP é obrigatório"),
+    cep: yup.string().max(8 ,"Hm... A quantidade de dígitos do CEP está correta? Um CEP possui 8 dígitos"),
     number: yup.string().required("O número da residência é obrigatório"),
     namecard: yup.string().required("Informe o nome presente no cartão"),
     numbercard: yup.string().required("Informe o número do cartão"),
@@ -33,12 +33,48 @@ function CheckOut () {
         resolver: yupResolver(schema)
       });
       const onSubmit = data =>{ console.log(data)
+        
+
+
         clearCart()
+        createClient()
         navigate("/success");
     };
 
 
-    
+    const [nome, setNome] = useState();
+    const [email, setEmail] = useState();
+    const [tel, setTel] = useState();
+    const [login, setLogin] = useState();
+    const [password, setPassword] = useState();
+    const [cpf, setCpf] = useState();
+    const [street, setStreet] = useState();
+    const [number, setNumber] = useState();
+    const [neighborhood, setNeighborhood] = useState();
+    const [city, setCity] = useState();
+    const [uf, setUf] = useState();
+    const [cep, setCep] = useState();
+
+    const createClient = async () => {
+ 
+
+        await blogFetch.post("/client", {
+            id: '',
+            name: nome,
+            email: email,
+            tel: tel,
+            login: login,
+            password: password,
+            cpf: cpf,
+            street: street,
+            number: number,
+            neighborhood: neighborhood,
+            city: city,
+            uf: uf,
+            cep: cep
+        });
+
+    };
 
 
 
@@ -119,7 +155,9 @@ function CheckOut () {
                     <ul className="list-group mb-3">
 
                         {Object.keys(cart.cart).map((key) => {
+                           
                             const { product, quantity } = cart.cart[key]
+                            
                             return (
                                 <li className="list-group-item d-flex justify-content-between lh-condensed" key={key} >
                                     <div>
@@ -146,27 +184,27 @@ function CheckOut () {
                         <div className="row">
                             <div className="col mb-3">
                                 <label htmlFor="primeiroNome">Nome</label>
-                                <input {...register("name")}  type="text" className="form-control" id="name" />
+                                <input {...register("name")}  type="text" className="form-control" id="name" onChange={(e) => setNome(e.target.value)}/>
                                 <p className="error-message">{errors.name?.message}</p>
                             </div>
                         </div>
 
                         <div className="mb-3">
                             <label htmlFor="cpf">CPF</label>
-                            <input {...register("cpf")} type="text" className="form-control" id="cpf"  />
+                            <input {...register("cpf")} type="text" className="form-control" id="cpf"  onChange={(e) => setCpf(e.target.value)} />
                             <p className="error-message">{errors.cpf?.message}</p>
 
                         </div>
 
                         <div className="mb-3">
                             <label htmlFor="email">Email</label>
-                            <input {...register("email")} type="email" className="form-control" id="email"  />
+                            <input {...register("email")} type="email" className="form-control" id="email" onChange={(e) => setEmail(e.target.value)} />
                             <p className="error-message">{errors.email?.message}</p>
 
                         </div>
                         <div className="mb-3">
                             <label htmlFor="tel">Telefone</label>
-                            <input {...register("tel")} type="tel" className="form-control" id="tel"/>
+                            <input {...register("tel")} type="tel" className="form-control" id="tel" onChange={(e) => setTel(e.target.value)}/>
                             <p className="error-message">{errors.tel?.message}</p>
 
                         </div>
@@ -176,14 +214,14 @@ function CheckOut () {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text">@</span>
                                 </div>
-                                <input {...register("login")} type="text" className="form-control" id="login"  />
+                                <input {...register("login")} type="text" className="form-control" id="login"onChange={(e) => setLogin(e.target.value)}  />
                                 <p className="error-message">{errors.login?.message}</p>
 
                             </div>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="password">Senha</label>
-                            <input {...register("password")} type="password" className="form-control" id="senha"/>
+                            <input {...register("password")} type="password" className="form-control" id="senha" onChange={(e) => setPassword(e.target.value)}/>
                             <p className="error-message">{errors.password?.message}</p>
 
                         </div>
@@ -193,16 +231,16 @@ function CheckOut () {
                             <div className="row g-3">
                                 <label htmlFor="endereco">Endereço</label>
                                 <div className="col-sm">
-                                    <input {...register("cep")} type="text" className="form-control mb-3" placeholder="CEP" onBlur={checkCEP}/>
+                                    <input {...register("cep")} type="text" className="form-control mb-3" placeholder="CEP" onBlur={checkCEP}  onChange={(e) => setCep(e.target.value)} />
                                     <p className="error-message">{errors.cep?.message}</p>
                                 </div>
                                 <div className="col-sm-7">
-                                    <input {...register("street")} type="text" className="form-control" id="street" placeholder="Rua, Av., Estrada..."  />
+                                    <input {...register("street")} type="text" className="form-control" id="street" placeholder="Rua, Av., Estrada..."  onFocus={(e) => setStreet(e.target.value)}/>
                                     <p className="error-message">{errors.street?.message}</p>
                                 </div>
 
                                 <div className="col-sm">
-                                    <input {...register("number")} type="Number" className="form-control" placeholder="Número" />
+                                    <input {...register("number")} type="Number" className="form-control" placeholder="Número" onFocus={(e) => setNumber(e.target.value)} />
                                     <p className="error-message">{errors.number?.message}</p>
                                 </div>
 
@@ -211,15 +249,15 @@ function CheckOut () {
                             <div className="row g-3">
 
                                 <div className="col-sm">
-                                    <input {...register("neighborhood")} type="text" className="form-control mb-3" id="neighborhood" placeholder="Bairro"  />
+                                    <input {...register("neighborhood")} type="text" className="form-control mb-3" id="neighborhood" placeholder="Bairro"  onFocus={(e) => setNeighborhood(e.target.value)} />
                                     <p className="error-message">{errors.neighborhood?.message}</p>
                                 </div>
                                 <div className="col-sm">
-                                    <input {...register("city")} type="text" className="form-control mb-3" id="city" placeholder="Cidade"  />
+                                    <input {...register("city")} type="text" className="form-control mb-3" id="city" placeholder="Cidade" onFocus={(e) => setCity(e.target.value)} />
                                     <p className="error-message">{errors.city?.message}</p>
                                 </div>
                                 <div className="col-sm">
-                                    <input {...register("uf")}  type="text" className="form-control" id="uf" placeholder="Estado"  />
+                                    <input {...register("uf")}  type="text" className="form-control" id="uf" placeholder="Estado" onFocus={(e) => setUf(e.target.value)} />
                                     <p className="error-message">{errors.uf?.message}</p>
                                 </div>
 
