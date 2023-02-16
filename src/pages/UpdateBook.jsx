@@ -1,9 +1,8 @@
 import blogFetch from "../axios/config";
 import { useState, useEffect } from "react";
-
 import { useParams, useNavigate, Link } from "react-router-dom";
-
 import '../css/UpdateBook.css'
+import Loading from "../images/loading.gif"
 
 function UpdateBook () {
   const navigate = useNavigate();
@@ -37,6 +36,9 @@ function UpdateBook () {
   const UpBook = async (e) => {
     e.preventDefault();
 
+    const btnblock = document.getElementById('updatebook');
+    btnblock.setAttribute("disabled", "");
+    btnblock.innerHTML = `<img src=${Loading} width="25px" height="25px"/>`
 
 
     await blogFetch.put(`/book/${id}`, {
@@ -69,7 +71,7 @@ function UpdateBook () {
             <label >Editora:</label>
             <input type="text" name="publishing" id="publishing" placeholder="Digite a editora" onChange={(e) => setPublishing(e.target.value)} value={publishing || ""}
             required/>
-            <label >Author:</label>
+            <label >Autor:</label>
             <input type="text" name="author" id="author" placeholder="Digite o autor"
               onChange={(e) => setAuthor(e.target.value)} value={author || ""} required/>
             <label >Preço:(ex.: 45.99)</label>
@@ -84,7 +86,7 @@ function UpdateBook () {
             <label >Descrição:</label>
             <textarea name="description" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)} value={description || ""}></textarea>
           </div>
-          <input type="submit" value="Editar Livro" className="btn-update" />
+          <button type="submit" className="btn-update mb-2" id="updatebook">Editar Livro</button>
           <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>
         </form>
       </div>

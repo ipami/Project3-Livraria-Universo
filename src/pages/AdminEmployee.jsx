@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/AdminEmployee.css";
 import axios from "axios";
+import Loading from "../images/loading.gif"
 
 function AdminEmployee () {
     const [employee, setEmployee] = useState([]);
@@ -20,6 +21,12 @@ function AdminEmployee () {
     };
 
     const deleteEmployee = async (id) => {
+
+        const btnblock = document.getElementById(`delemp${id}`);
+        btnblock.setAttribute("disabled", "");
+        btnblock.innerHTML = `<img src=${Loading} width="18px" height="18px"/>`
+    
+
         await blogFetch.delete(`/employee/${id}`);
 
         const filteredEmployee = employee.filter((emp) => emp.id !== id);
@@ -56,7 +63,7 @@ function AdminEmployee () {
                             <td>
                                 <div className="actions">
                                     <Link to={`/admin/updateemployee/${emp.id}`}><button className="btn edit-btn"> Editar</button></Link>
-                                    <button className="btn delete-btn" onClick={() => deleteEmployee(emp.id)}>
+                                    <button className="btn delete-btn" id={`delemp${emp.id}`} onClick={() => deleteEmployee(emp.id)}>
                                         Excluir
                                     </button>
                                 </div>

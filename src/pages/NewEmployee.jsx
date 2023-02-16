@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/NewEmployee.css";
 import imageEmployee from "../images/employee.jpg"
+import Loading from "../images/loading.gif"
 
 function NewEmployee () {
     const navigate = useNavigate();
@@ -15,6 +16,11 @@ function NewEmployee () {
 
     const createEmployee = async (e) => {
         e.preventDefault();
+
+        const btnblock = document.getElementById('createnewemp');
+        btnblock.setAttribute("disabled", "");
+        btnblock.innerHTML = `<img src=${Loading} width="25px" height="25px"/>`
+
 
         await blogFetch.post("/employee", {
             id: '',
@@ -46,7 +52,7 @@ function NewEmployee () {
                         onChange={(e) => setDepartment(e.target.value)} className="input-newemployee"
                         required />
                 </div>
-                <input type="submit" value="Cadastrar Funcionário" className="btn-newemployee" />
+                <button type="submit" className="btn-newemployee mb-2" id="createnewemp">Cadastrar Funcionário</button>
                 <Link to="/admin"><button className="btn-newemployee back back-to-adminpage" >Voltar</button></Link>
             </form>
             </div>

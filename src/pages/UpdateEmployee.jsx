@@ -2,6 +2,7 @@ import blogFetch from "../axios/config";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import '../css/UpdateBook.css'
+import Loading from "../images/loading.gif"
 
 function UpdateEmployee () {
   const navigate = useNavigate();
@@ -33,6 +34,10 @@ function UpdateEmployee () {
   const editEmployee = async (e) => {
     e.preventDefault();
 
+
+    const btnblock = document.getElementById('updateemp');
+    btnblock.setAttribute("disabled", "");
+    btnblock.innerHTML = `<img src=${Loading} width="25px" height="25px"/>`
 
 
     await blogFetch.put(`/employee/${id}`, {
@@ -66,7 +71,7 @@ function UpdateEmployee () {
           <input type="text" name="department" id="department" placeholder="Digite o autor"
             onChange={(e) => setDepartment(e.target.value)} value={department || ""} required/>
         </div>
-        <input type="submit" value="Editar Funcionário" className="btn-update" />
+        <button type="submit" className="btn-update mb-2" id="updateemp">Editar Funcionário</button>
         <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>
       </form>
     </div>

@@ -1,12 +1,10 @@
 import blogFetch from "../axios/config";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
 import "../css/NewBook.css";
-
 import imageNew from "../images/insira.png"
+import Loading from "../images/loading.gif"
 
 function NewBook () {
     const navigate = useNavigate();
@@ -20,6 +18,10 @@ function NewBook () {
 
     const createBook = async (e) => {
         e.preventDefault();
+
+        const btnblock = document.getElementById('createnewbook');
+        btnblock.setAttribute("disabled", "");
+        btnblock.innerHTML = `<img src=${Loading} width="25px" height="25px"/>`
 
 
         await blogFetch.post("/book", {
@@ -48,7 +50,7 @@ function NewBook () {
                     <input type="text" name="publishing" id="publishing" placeholder="Digite a editora"
                         onChange={(e) => setPublishing(e.target.value)} className="input-newbook"
                         required/>
-                    <label >Author:</label>
+                    <label >Autor:</label>
                     <input type="text" name="author" id="author" placeholder="Digite o autor"
                         onChange={(e) => setAuthor(e.target.value)} className="input-newbook"
                         required/>
@@ -65,7 +67,7 @@ function NewBook () {
                     <label htmlFor="description">Descrição:</label>
                     <textarea name="description" className="textarea-newbook" id="description" placeholder="Digite a descrição..." onChange={(e) => setDescription(e.target.value)} required></textarea>
                 </div>
-                <input type="submit" value="Cadastrar Livro" className="btn-newbook" />
+                <button type="submit" value="Cadastrar Livro" className="btn-newbook mb-2"  id="createnewbook">Cadastrar Livro </button>
                 <Link to="/admin"><button className="btn-newbook backmenu back-to-adminpage" >Voltar</button></Link>
             </form>
         </div>

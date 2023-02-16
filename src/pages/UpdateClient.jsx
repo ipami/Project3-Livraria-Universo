@@ -1,9 +1,9 @@
 import blogFetch from "../axios/config";
 import { useState, useEffect } from "react";
-
 import { useParams, useNavigate, Link } from "react-router-dom";
-
 import '../css/UpdateBook.css'
+import Loading from "../images/loading.gif"
+
 
 function UpdateClient () {
   const navigate = useNavigate();
@@ -70,7 +70,9 @@ function UpdateClient () {
   const editClient = async (e) => {
     e.preventDefault();
 
-
+    const btnblock = document.getElementById('upclient');
+    btnblock.setAttribute("disabled", "");
+    btnblock.innerHTML = `<img src=${Loading} width="25px" height="25px"/>`
 
     await blogFetch.put(`/client/${id}`, {
       id: id,
@@ -124,7 +126,7 @@ function UpdateClient () {
           <input classname="update" type="text" name="uf" id="uf" placeholder="Digite a UF" onChange={(e) => setUF(e.target.value)} value={uf || ""} required/>
 
         </div>
-        <input type="submit" value="Editar Cliente" className="btn-update" />
+        <button type="submit" className="btn-update mb-2" id="upclient"> Editar Cliente </button>
         <Link to="/admin"><input type="button" value="Voltar" className="btn-back" /></Link>
       </form>
     </div>

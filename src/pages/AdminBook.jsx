@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/AdminBook.css";
 import axios from "axios";
-
+import Loading from "../images/loading.gif"
 
 
 
@@ -23,6 +23,11 @@ function AdminBook () {
   };
 
   const deleteBook = async (id) => {
+
+    const btnblock = document.getElementById(`delbook${id}`);
+    btnblock.setAttribute("disabled", "");
+    btnblock.innerHTML = `<img src=${Loading} width="18px" height="18px"/>`
+
     await blogFetch.delete(`/book/${id}`);
 
     const filteredBooks = books.filter((book) => book.id !== id);
@@ -51,7 +56,7 @@ function AdminBook () {
                   <Link  to={`/admin/updatebook/${book.id}`}>
                    <button className="btn edit-btn">Editar</button> 
                   </Link>
-                  <button className="btn delete-btn" onClick={() => deleteBook(book.id)}>
+                  <button className="btn delete-btn" id={`delbook${book.id}`} onClick={() => deleteBook(book.id)}>
                     Excluir
                   </button>
                 </div>

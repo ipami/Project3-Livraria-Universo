@@ -15,7 +15,7 @@ function MsgSuccess() {
                             <div className="wrapper px-5 text-center">
                                 <img src={checkImg} width="120" height="120"/>
                                 <h1 className="txtmainhome"> Pagamento realizado com sucesso!</h1>
-                                <h3> Sua compra foi efetuada com sucesso e em breve você receberá um email com as informações sobre entrega!</h3>
+                                <h3> Sua compra foi efetuada com sucesso e em breve você receberá um email com as informações sobre a entrega!</h3>
                                 <Link to="/"> <button className="btn-detail mt-3"> Voltar ao início</button></Link>
 
                             </div>

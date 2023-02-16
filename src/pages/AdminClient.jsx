@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/AdminEmployee.css";
 import axios from "axios";
+import Loading from "../images/loading.gif"
 
 function AdminClient () {
     const [clients, setClients] = useState([]);
@@ -19,7 +20,12 @@ function AdminClient () {
         }
     };
 
-    const deleteEmployee = async (id) => {
+    const deleteClient = async (id) => {
+
+        const btnblock = document.getElementById(`delclient${id}`);
+        btnblock.setAttribute("disabled", "");
+        btnblock.innerHTML = `<img src=${Loading} width="18px" height="18px"/>`
+
         await blogFetch.delete(`/client/${id}`);
 
         const filteredClient = clients.filter((client) => client.id !== id);
@@ -58,7 +64,7 @@ function AdminClient () {
                                     <Link  to={`/admin/updateclient/${client.id}`}>
                                       <button className="btn edit-btn"> Editar</button> 
                                     </Link>
-                                    <button className="btn delete-btn" onClick={() => deleteEmployee(client.id)}>
+                                    <button className="btn delete-btn" id={`delclient${client.id}`} onClick={() => deleteClient(client.id)}>
                                         Excluir
                                     </button>
                                 </div>

@@ -15,8 +15,10 @@ O tema escolhido para o site foi livraria. O site em si é um protótipo de e-co
 Este projeto foi criado com o [React App](https://pt-br.reactjs.org/) através do [Vite](https://vitejs.dev/).
 <br>Foi utilizado também o seguinte Json-server: https://pj3-estao-servidos.onrender.com/
 
-<h3> Scripts disponíveis </h3>
-No diretório do projeto, você pode executar:
+Para executar o projeto você deve digitar em seu terminal:
+
+<h3>npm install</h3>
+Faz a instalação de pacotes, gerenciamento da versões e gerenciamento de dependências necessárias para executar o projeto.
 
 <h3>npm run dev</h3>
 Executa o aplicativo no modo de desenvolvimento.
